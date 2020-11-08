@@ -1,16 +1,33 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Shared/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Shared/StarBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Levels/TestLevel.gd" type="Script" id=3]
+[ext_resource path="res://src/Enemies/Rotator.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 640, 480 )
 
 [node name="TestLevel" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="StarBackground" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+current = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 scale = Vector2( 3, 3 )
+hitpoints = 100
 max_velocity_orthogonal = 600.0
 acceleration = 40.0
 deceleration = 20.0
+
+[node name="Rotator" parent="." instance=ExtResource( 4 )]
+position = Vector2( -45.6741, -198.03 )
+scale = Vector2( 3, 3 )
+
+[node name="PlayerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+shape = SubResource( 1 )

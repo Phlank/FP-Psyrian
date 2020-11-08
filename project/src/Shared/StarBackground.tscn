@@ -7,20 +7,25 @@
 [node name="StarBackground" type="ParallaxBackground"]
 
 [node name="BlackLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 1000, 1000 )
 
 [node name="Sprite" type="Sprite" parent="BlackLayer"]
+scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1000, 1000 )
 
 [node name="BackStarLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 2000, 2000 )
 
 [node name="Sprite" type="Sprite" parent="BackStarLayer"]
 texture = ExtResource( 1 )
 
 [node name="FrontStarLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2( 0.3, 0.3 )
+motion_mirroring = Vector2( 2000, 2000 )
 
 [node name="Sprite" type="Sprite" parent="FrontStarLayer"]
+visible = false
 texture = ExtResource( 3 )
