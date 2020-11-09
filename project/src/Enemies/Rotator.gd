@@ -8,9 +8,10 @@ onready var is_active = false
 onready var is_inflicting = false
 var inflicting_body
 
+signal death(score)
 
 func _ready():
-	hitpoints = 30
+	hitpoints = 20
 	reward = 50
 	contact_damage = 1
 
@@ -39,6 +40,7 @@ func inflict(damage):
 func _kill():
 	$CollisionShape2D.queue_free()
 	$Animation.play("death")
+	emit_signal("death", reward)
 
 func _on_Animation_animation_finished():
 	if $Animation.animation == "death":

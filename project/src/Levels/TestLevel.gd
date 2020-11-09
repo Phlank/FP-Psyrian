@@ -3,6 +3,7 @@ extends Node2D
 var fire_rate = 0.1
 var since_last_fire : float
 
+onready var score = 0
 onready var scene_movement = 200
 onready var bullet_scene = load("res://src/Shared/PlayerBullet.tscn")
 
@@ -12,8 +13,10 @@ func _ready():
 	$Player.constant_movement = Vector2(0, -scene_movement)
 
 func _process(delta):
+	$ScoreLabel.rect_position = $PlayerArea.position + Vector2(-500, -270)
 	$HealthBar.position = $PlayerArea.position + Vector2(-450, -280)
 	$Camera2D.position = $PlayerArea.position
+	$BackgroundMusic.position = $PlayerArea.position
 	if Input.is_action_pressed("fire"):
 		_process_attack(delta)
 	_process_camera_movement(delta)
@@ -56,21 +59,24 @@ func _ensure_player_inside_bounds():
 	elif $Player.position.y > bottom:
 		$Player.position.y = bottom
 
-
 func _on_PlayerArea_area_exited(area):
 	# Bullets
 	if area.is_in_group("bullets"):
 		area.queue_free()
 	pass # Replace with function body.
 
-
 func _on_Player_health_changed(health):
 	$HealthBar.set_health(health)
-
 
 func _on_PlayerArea_body_entered(body):
 	print("Player Area Entered")
 	if body.is_in_group("enemies"):
 		print("Action starting...")
 		body.start_action()
+	pass # Replace with function body.
+
+
+func _on_Rotator_death(score_bonus):
+	score += score_bonus
+	$ScoreLabel.text = "Score: " + str(score)
 	pass # Replace with function body.

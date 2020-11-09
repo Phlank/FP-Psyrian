@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Shared/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Shared/StarBackground.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/Enemies/Rotator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/wav/fire.wav" type="AudioStream" id=5]
 [ext_resource path="res://src/Shared/HealthBar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/wav/sawsquarenoise - Title Screen.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1024, 600 )
@@ -38,6 +39,7 @@ shape = SubResource( 1 )
 
 [node name="FireSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
+volume_db = -9.0
 
 [node name="HealthBar" parent="." instance=ExtResource( 6 )]
 
@@ -48,64 +50,296 @@ position = Vector2( -205.641, -680.1 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator7" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( -205.641, -813.381 )
+position = Vector2( -205.641, -863.835 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator8" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( -205.641, -766.367 )
+position = Vector2( -205.641, -962.929 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator9" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( -205.641, -722.023 )
+position = Vector2( -205.641, -772.476 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator10" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 197.281, -972.594 )
+position = Vector2( 193.904, -1406.79 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator11" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 197.281, -1105.87 )
+position = Vector2( 193.904, -1670.22 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator12" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 197.281, -1058.86 )
+position = Vector2( 193.904, -1493.06 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator13" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 197.281, -1014.52 )
+position = Vector2( 193.904, -1583.23 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator14" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( -27.3252, -1267.07 )
+position = Vector2( -27.3252, -2168.99 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator15" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( -27.3252, -1400.35 )
+position = Vector2( -27.0166, -2438.27 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator16" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( -27.3252, -1353.33 )
+position = Vector2( -28.076, -2356.28 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator17" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( -27.3252, -1308.99 )
+position = Vector2( -28.076, -2263.67 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator18" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 32.6101, -1267.07 )
+position = Vector2( 32.6101, -2168.99 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator19" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 32.6101, -1400.35 )
+position = Vector2( 32.9188, -2438.27 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator20" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 32.6101, -1353.33 )
+position = Vector2( 31.8593, -2356.28 )
 scale = Vector2( 3, 3 )
 
 [node name="Rotator21" parent="Enemies" instance=ExtResource( 4 )]
-position = Vector2( 32.6101, -1308.99 )
+position = Vector2( 31.8593, -2263.67 )
 scale = Vector2( 3, 3 )
+
+[node name="Rotator22" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -33.8899, -2927.51 )
+scale = Vector2( 3, 3 )
+acceleration = Vector2( -1, 4 )
+
+[node name="Rotator23" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -34.9493, -3061.85 )
+scale = Vector2( 3, 3 )
+acceleration = Vector2( -4, 1 )
+
+[node name="Rotator24" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -33.8899, -3013.77 )
+scale = Vector2( 3, 3 )
+acceleration = Vector2( -3, 2 )
+
+[node name="Rotator25" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -33.8899, -2969.43 )
+scale = Vector2( 3, 3 )
+acceleration = Vector2( -2, 3 )
+
+[node name="Rotator26" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 26.0455, -2927.51 )
+scale = Vector2( 3, 3 )
+acceleration = Vector2( 1, 4 )
+
+[node name="Rotator27" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 26.0455, -3060.79 )
+scale = Vector2( 3, 3 )
+acceleration = Vector2( 4, 1 )
+
+[node name="Rotator30" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -35.4773, -3226.07 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 50 )
+acceleration = Vector2( 0, 5 )
+
+[node name="Rotator31" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 25.5175, -3227.53 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 50 )
+acceleration = Vector2( 0, 5 )
+
+[node name="Rotator32" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -171.754, -3712.98 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 300 )
+acceleration = Vector2( 0, -3 )
+
+[node name="Rotator33" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 158.956, -3712.98 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 300 )
+acceleration = Vector2( 0, -3 )
+
+[node name="Rotator34" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -108.112, -3891.79 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 350 )
+acceleration = Vector2( 1, -4 )
+
+[node name="Rotator36" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -224.025, -3888.01 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 350 )
+acceleration = Vector2( 0, -4 )
+
+[node name="Rotator35" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 102.906, -3890.53 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 350 )
+acceleration = Vector2( -1, -4 )
+
+[node name="Rotator37" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 222.599, -3891.79 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 350 )
+acceleration = Vector2( 0, -4 )
+
+[node name="Rotator38" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -158.406, -4828.91 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 300 )
+acceleration = Vector2( 0, -3 )
+
+[node name="Rotator39" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 172.305, -4828.91 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 300 )
+acceleration = Vector2( 0, -3 )
+
+[node name="Rotator40" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -100.103, -4671.33 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 350 )
+acceleration = Vector2( 1, -4 )
+
+[node name="Rotator41" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -216.016, -4667.55 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 350 )
+acceleration = Vector2( 0, -4 )
+
+[node name="Rotator42" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 110.915, -4670.07 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 350 )
+acceleration = Vector2( -1, -4 )
+
+[node name="Rotator43" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 230.608, -4671.33 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 350 )
+acceleration = Vector2( 0, -4 )
+
+[node name="Rotator44" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -400.055, -5589.86 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 400, 0 )
+acceleration = Vector2( -2, 0 )
+
+[node name="Rotator45" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 70.3493, -5306.7 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, -300 )
+acceleration = Vector2( 0, 3 )
+
+[node name="Rotator50" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 219.481, -5805.06 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 300 )
+acceleration = Vector2( 0, -3 )
+
+[node name="Rotator51" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -122.201, -5812.61 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, 300 )
+acceleration = Vector2( 0, -3 )
+
+[node name="Rotator46" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -396.497, -5415.29 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 400, 0 )
+acceleration = Vector2( -2, 0 )
+
+[node name="Rotator47" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 350.292, -5515.34 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( -400, 0 )
+acceleration = Vector2( 2, 0 )
+
+[node name="Rotator48" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 350.642, -5689.65 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( -400, 0 )
+acceleration = Vector2( 2, 0 )
+
+[node name="Rotator49" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -258.336, -5305.81 )
+scale = Vector2( 3, 3 )
+velocity = Vector2( 0, -300 )
+acceleration = Vector2( 0, 3 )
+
+[node name="Rotator28" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 26.0455, -3013.77 )
+scale = Vector2( 3, 3 )
+acceleration = Vector2( 3, 2 )
+
+[node name="Rotator29" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 26.0455, -2969.43 )
+scale = Vector2( 3, 3 )
+acceleration = Vector2( 2, 3 )
+
+[node name="ScoreLabel" type="Label" parent="."]
+margin_right = 100.0
+margin_bottom = 20.0
+text = "Score: "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+volume_db = -6.0
+autoplay = true
 [connection signal="health_changed" from="Player" to="." method="_on_Player_health_changed"]
 [connection signal="area_exited" from="PlayerArea" to="." method="_on_PlayerArea_area_exited"]
 [connection signal="body_entered" from="PlayerArea" to="." method="_on_PlayerArea_body_entered"]
+[connection signal="death" from="Enemies/Rotator6" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator7" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator8" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator9" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator10" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator11" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator12" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator13" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator14" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator15" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator16" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator17" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator18" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator19" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator20" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator21" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator22" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator23" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator24" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator25" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator26" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator27" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator30" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator31" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator32" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator33" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator34" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator36" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator35" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator37" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator38" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator39" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator40" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator41" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator42" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator43" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator44" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator45" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator50" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator51" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator46" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator47" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator48" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator49" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator28" to="." method="_on_Rotator_death"]
+[connection signal="death" from="Enemies/Rotator29" to="." method="_on_Rotator_death"]
