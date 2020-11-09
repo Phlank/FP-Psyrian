@@ -51,7 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="project"
-run/main_scene="res://src/Levels/Level1.tscn"
+run/main_scene="res://src/Shared/Title.tscn"
 config/icon="res://icon.png"
 
 [display]

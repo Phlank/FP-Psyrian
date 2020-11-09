@@ -1,11 +1,8 @@
 class_name Fade
 extends Node2D
 
-signal faded_in
-signal faded_out
-
-func _ready():
-	pass # Replace with function body.
+signal faded_in()
+signal faded_out()
 
 func play(value):
 	$AnimationPlayer.play(value)

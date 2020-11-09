@@ -9,7 +9,9 @@ export var deceleration : float
 
 var base_movement : Vector2
 var gun_level : int
+
 onready var vulnerable = true
+onready var dead = false
 
 var bullet_scene = load("res://src/Shared/PlayerBullet.tscn")
 
@@ -22,9 +24,10 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	_process_movement(delta)
-	_process_bullet_spawns()
-	pass
+	if !dead:
+		_process_movement(delta)
+		_process_bullet_spawns()
+		
 
 func _process_movement(delta):
 	if Input.is_action_pressed("move_left"):
@@ -77,6 +80,7 @@ func bound_position(new_position : Vector2):
 	base_movement = Vector2(0, 0)
 
 func _kill():
+	dead = true
 	vulnerable = false
 	emit_signal("died")
 	$AnimatedSprite.play("death")

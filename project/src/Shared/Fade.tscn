@@ -2,8 +2,6 @@
 
 [ext_resource path="res://src/Shared/Fade.gd" type="Script" id=1]
 
-
-
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in"
 tracks/0/type = "value"
