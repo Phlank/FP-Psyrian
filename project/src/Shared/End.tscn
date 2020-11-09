@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/Shared/StarBackground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/fonts/Gameplay.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/Shared/End.gd" type="Script" id=3]
+[ext_resource path="res://src/Shared/Fade.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="End" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="StarBackground" parent="." instance=ExtResource( 1 )]
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 500.0
+custom_fonts/font = SubResource( 1 )
+text = "Congratulations!"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_top = 100.0
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_fonts/font = SubResource( 2 )
+text = "That's all the game there is for now. Press Space to return to the main menu."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fade" parent="." instance=ExtResource( 4 )]
+[connection signal="faded_out" from="Fade" to="." method="_on_Fade_faded_out"]
