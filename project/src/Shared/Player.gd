@@ -9,10 +9,12 @@ export var deceleration : float
 
 var base_movement : Vector2
 var gun_level : int
+onready var vulnerable = true
 
 var bullet_scene = load("res://src/Shared/PlayerBullet.tscn")
 
 signal health_changed(health)
+signal died()
 
 func _ready():
 	gun_level = 1
@@ -63,15 +65,19 @@ func _process_bullet_spawns():
 	$BulletSpawn2.position = position + Vector2(5, 0)
 
 func inflict(damage):
-	health = clamp(health - damage, 0, 9999)
-	print(health)
-	emit_signal("health_changed", health)
-	if (health == 0):
-		_kill()
+	if vulnerable:
+		health = clamp(health - damage, 0, 9999)
+		print(health)
+		emit_signal("health_changed", health)
+		if (health == 0):
+			_kill()
 
 func bound_position(new_position : Vector2):
 	position = new_position
 	base_movement = Vector2(0, 0)
 
 func _kill():
-	pass
+	vulnerable = false
+	emit_signal("died")
+	$AnimatedSprite.play("death")
+	$DeathSound.play()

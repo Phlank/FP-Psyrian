@@ -14,7 +14,6 @@ func _ready():
 	hitpoints = 20
 	reward = 50
 	contact_damage = 1
-	$Animation.play("idle")
 
 func _process(delta):
 	if is_inflicting:
