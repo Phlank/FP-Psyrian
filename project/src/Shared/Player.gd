@@ -20,11 +20,11 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	_process_movement()
+	_process_movement(delta)
 	_process_bullet_spawns()
 	pass
 
-func _process_movement():
+func _process_movement(delta):
 	if Input.is_action_pressed("move_left"):
 		base_movement.x = clamp(base_movement.x - acceleration, -max_velocity_orthogonal, max_velocity_orthogonal)
 	if Input.is_action_pressed("move_right"):
