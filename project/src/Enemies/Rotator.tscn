@@ -129,6 +129,8 @@ playing = true
 shape = SubResource( 24 )
 
 [node name="HurtArea" type="Area2D" parent="."]
+gravity_vec = Vector2( 0, 0 )
+gravity = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea"]
 self_modulate = Color( 0.886275, 0.870588, 0.811765, 1 )

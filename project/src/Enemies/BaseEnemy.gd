@@ -1,5 +1,5 @@
 class_name BaseEnemy
-extends Node2D
+extends KinematicBody2D
 
 var hitpoints : float
 var reward : float

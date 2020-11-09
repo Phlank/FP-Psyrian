@@ -4,9 +4,6 @@
 [ext_resource path="res://assets/img/smallexplosion1.png" type="Texture" id=2]
 [ext_resource path="res://src/Shared/PlayerBullet.gd" type="Script" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 2.65324
-
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 6, 12 )
@@ -52,14 +49,17 @@ animations = [ {
 "speed": 20.0
 } ]
 
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 2.02978
+height = 6.01143
+
 [node name="PlayerBullet" type="Area2D"]
 script = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.148651, -4.16224 )
-shape = SubResource( 1 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 11 )
 [connection signal="body_entered" from="." to="." method="_on_PlayerBullet_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

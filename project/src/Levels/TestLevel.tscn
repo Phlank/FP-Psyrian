@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Shared/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Shared/StarBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Levels/TestLevel.gd" type="Script" id=3]
 [ext_resource path="res://src/Enemies/Rotator.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/wav/fire.wav" type="AudioStream" id=5]
+[ext_resource path="res://src/Shared/HealthBar.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 640, 480 )
+extents = Vector2( 1024, 600 )
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource( 3 )
@@ -14,20 +16,96 @@ script = ExtResource( 3 )
 [node name="StarBackground" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( -1, 0 )
 current = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 scale = Vector2( 3, 3 )
-hitpoints = 100
+health = 100
+constant_movement = Vector2( 0, 20 )
 max_velocity_orthogonal = 600.0
-acceleration = 40.0
-deceleration = 20.0
-
-[node name="Rotator" parent="." instance=ExtResource( 4 )]
-position = Vector2( -45.6741, -198.03 )
-scale = Vector2( 3, 3 )
+acceleration = 200.0
+deceleration = 200.0
 
 [node name="PlayerArea" type="Area2D" parent="."]
+position = Vector2( -1, 1 )
+gravity_vec = Vector2( 0, 0 )
+gravity = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+[node name="PlayerAreaShape" type="CollisionShape2D" parent="PlayerArea"]
+position = Vector2( 0, -1.7818 )
 shape = SubResource( 1 )
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="HealthBar" parent="." instance=ExtResource( 6 )]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Rotator6" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -205.641, -680.1 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator7" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -205.641, -813.381 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator8" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -205.641, -766.367 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator9" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -205.641, -722.023 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator10" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 197.281, -972.594 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator11" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 197.281, -1105.87 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator12" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 197.281, -1058.86 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator13" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 197.281, -1014.52 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator14" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -27.3252, -1267.07 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator15" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -27.3252, -1400.35 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator16" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -27.3252, -1353.33 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator17" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( -27.3252, -1308.99 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator18" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 32.6101, -1267.07 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator19" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 32.6101, -1400.35 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator20" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 32.6101, -1353.33 )
+scale = Vector2( 3, 3 )
+
+[node name="Rotator21" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 32.6101, -1308.99 )
+scale = Vector2( 3, 3 )
+[connection signal="health_changed" from="Player" to="." method="_on_Player_health_changed"]
+[connection signal="area_exited" from="PlayerArea" to="." method="_on_PlayerArea_area_exited"]
+[connection signal="body_entered" from="PlayerArea" to="." method="_on_PlayerArea_body_entered"]

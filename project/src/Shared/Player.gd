@@ -1,7 +1,7 @@
 class_name Player
 extends KinematicBody2D
 
-export var hitpoints : int
+export var health : int
 export var constant_movement : Vector2
 export var max_velocity_orthogonal : float
 export var acceleration : float
@@ -12,6 +12,8 @@ var gun_level : int
 
 var bullet_scene = load("res://src/Shared/PlayerBullet.tscn")
 
+signal health_changed(health)
+
 func _ready():
 	gun_level = 1
 	base_movement = Vector2(0, 0)
@@ -19,8 +21,7 @@ func _ready():
 
 func _process(delta):
 	_process_movement()
-	$BulletSpawn1.position = position + Vector2(-5, 0)
-	$BulletSpawn2.position = position + Vector2(5, 0)
+	_process_bullet_spawns()
 	pass
 
 func _process_movement():
@@ -57,11 +58,20 @@ func _process_sprite_change():
 	else:
 		$AnimatedSprite.play("right_max")
 
+func _process_bullet_spawns():
+	$BulletSpawn1.position = position + Vector2(-5, 0)
+	$BulletSpawn2.position = position + Vector2(5, 0)
+
 func inflict(damage):
-	hitpoints = clamp(hitpoints - damage, 0, 9999)
-	print(hitpoints)
-	if (hitpoints == 0):
+	health = clamp(health - damage, 0, 9999)
+	print(health)
+	emit_signal("health_changed", health)
+	if (health == 0):
 		_kill()
+
+func bound_position(new_position : Vector2):
+	position = new_position
+	base_movement = Vector2(0, 0)
 
 func _kill():
 	pass

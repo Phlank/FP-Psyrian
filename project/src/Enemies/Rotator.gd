@@ -1,26 +1,34 @@
 class_name Rotator
 extends BaseEnemy
 
-export var velocity : float
-export var acceleration : float
+export var velocity : Vector2
+export var acceleration : Vector2
 
+onready var is_active = false
 onready var is_inflicting = false
 var inflicting_body
 
+
 func _ready():
-	hitpoints = 100
+	hitpoints = 30
 	reward = 50
 	contact_damage = 1
 
 func _process(delta):
 	if is_inflicting:
 		inflicting_body.inflict(1)
+	
+	if is_active:
+		move_and_slide(velocity)
+		velocity += acceleration
+
+#func _process_physics(delta):
 
 func start_action():
-	pass
+	is_active = true
 
 func stop_action():
-	pass
+	is_active = false
 
 func inflict(damage):
 	hitpoints = clamp(hitpoints - damage, 0, 9999)
