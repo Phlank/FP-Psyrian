@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/Gameplay.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/Shared/StarBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Shared/Credits.gd" type="Script" id=3]
+[ext_resource path="res://src/Shared/Fade.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
 size = 20
 font_data = ExtResource( 1 )
 
@@ -23,12 +28,28 @@ bbcode_enabled = true
 bbcode_text = "Music
 
 Title Screen: [url=\"https://soundcloud.com/phlankmusic\"]8-bit short by phlank[/url] 
-Level 1 music: [url=https://freemusicarchive.org/music/sawsquarenoise/dojokratos/tittle-screen]Title Screen by sawsquarenoise[/url]"
+Level 1 music: [url=https://freemusicarchive.org/music/sawsquarenoise/dojokratos/tittle-screen]Title Screen by sawsquarenoise[/url] | [url=https://creativecommons.org/licenses/by/4.0/legalcode]license[/url]"
 text = "Music
 
 Title Screen: 8-bit short by phlank 
-Level 1 music: Title Screen by sawsquarenoise"
+Level 1 music: Title Screen by sawsquarenoise | license"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="."]
+margin_top = 544.0
+margin_right = 1024.0
+margin_bottom = 579.0
+custom_fonts/font = SubResource( 2 )
+text = "Press Escape to Return"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fade" parent="." instance=ExtResource( 4 )]
+visible = false
 [connection signal="meta_clicked" from="RichTextLabel" to="." method="_on_RichTextLabel_meta_clicked"]
+[connection signal="faded_out" from="Fade" to="." method="_on_Fade_faded_out"]
