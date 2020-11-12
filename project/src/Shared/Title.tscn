@@ -40,12 +40,23 @@ playback/repeat = true
 stream = ExtResource( 4 )
 autoplay = true
 
-[node name="Label" type="Label" parent="."]
+[node name="StartLabel" type="Label" parent="."]
 margin_top = 400.0
 margin_right = 1024.0
 margin_bottom = 419.0
 custom_fonts/font = SubResource( 2 )
 text = "Press Space to Begin"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsLabel" type="Label" parent="."]
+margin_top = 425.0
+margin_right = 1024.0
+margin_bottom = 444.0
+custom_fonts/font = SubResource( 2 )
+text = "Press Escape to view credits"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

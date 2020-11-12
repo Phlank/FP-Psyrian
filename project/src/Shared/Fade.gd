@@ -4,6 +4,9 @@ extends Node2D
 signal faded_in()
 signal faded_out()
 
+func _ready():
+	$AnimationPlayer.play("fade_in")
+
 func play(value):
 	$AnimationPlayer.play(value)
 
