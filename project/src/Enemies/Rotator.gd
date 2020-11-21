@@ -20,8 +20,8 @@ func _process(delta):
 		inflicting_body.inflict(1)
 	
 	if is_active:
-		move_and_slide(velocity)
-		velocity += acceleration
+		move_and_slide(velocity * delta)
+		velocity += acceleration * delta
 
 #func _process_physics(delta):
 

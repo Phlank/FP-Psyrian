@@ -6,9 +6,9 @@ export var constant_movement : Vector2
 export var max_velocity_orthogonal : float
 export var acceleration : float
 export var deceleration : float
+var gun_level : int
 
 var base_movement : Vector2
-var gun_level : int
 
 onready var vulnerable = true
 onready var dead = false

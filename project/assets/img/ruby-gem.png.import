@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_stars02.png-944c8ee775875b3a299f84a2713f9fe4.stex"
+path="res://.import/ruby-gem.png-ab379d0baba64a84ca43e9e4d39832d5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/spr_stars02.png"
-dest_files=[ "res://.import/spr_stars02.png-944c8ee775875b3a299f84a2713f9fe4.stex" ]
+source_file="res://assets/img/ruby-gem.png"
+dest_files=[ "res://.import/ruby-gem.png-ab379d0baba64a84ca43e9e4d39832d5.stex" ]
 
 [params]
 
