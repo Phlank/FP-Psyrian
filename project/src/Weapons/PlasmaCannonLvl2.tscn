@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Weapons/PlasmaBullet.tscn" type="PackedScene" id=1]
+
+[node name="PlasmaCannonLvl2" type="Node2D"]
+
+[node name="PlayerBullet" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -8.12945 )
+
+[node name="PlayerBullet2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -12.8067, 0 )
+
+[node name="PlayerBullet3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 12.8067, 0 )

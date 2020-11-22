@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://GraySpike.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/gray-spike.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 10.5823
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 24, 28 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 28, 24, 28 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 56, 24, 28 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 10.9104
+
+[node name="GraySpike" type="RigidBody2D"]
+scale = Vector2( 3, 3 )
+mode = 1
+gravity_scale = 0.0
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Animation" type="AnimatedSprite" parent="."]
+position = Vector2( 0.467692, 0.467689 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+
+[node name="HurtArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea"]
+shape = SubResource( 6 )
+[connection signal="body_entered" from="HurtArea" to="." method="_on_HurtArea_body_entered"]

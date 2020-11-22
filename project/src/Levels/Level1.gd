@@ -3,9 +3,10 @@ extends Node2D
 var fire_rate = 0.1
 var since_last_fire : float
 
+onready var weapon_info = load("res://src/Weapons/WeaponInfo.gd").new()
+
 onready var score = 0
 onready var scene_movement = 200
-onready var bullet_scene = load("res://src/Shared/PlayerBullet.tscn")
 onready var dead = false
 onready var dead_time = 0.0
 onready var dead_fade_started = false
@@ -15,6 +16,7 @@ func _ready():
 	$HealthBar.set_health(100)
 	since_last_fire = fire_rate
 	$Player.constant_movement = Vector2(0, -scene_movement)
+	$Player.gun_weapon = weapon_info.WeaponNames.PLASMA_CANNON
 
 func _process(delta):
 	if !dead:
@@ -38,14 +40,12 @@ func _process_attack(delta):
 
 func _fire():
 	$FireSound.play()
-	var spawns = get_tree().get_nodes_in_group("bulletspawns1")
-	for spawn in spawns:
-		var bullet = bullet_scene.instance()
-		bullet.position = spawn.position
-		bullet.scale.x = 3
-		bullet.scale.y = 3
-		add_child(bullet)
-		bullet.add_to_group("bullets")
+	print(str(weapon_info))
+	print(str($Player.gun_weapon))
+	print(str($Player.gun_level))
+	var projectile = weapon_info.get_projectile($Player.gun_weapon, $Player.gun_level)
+	add_child(projectile)
+	projectile.position = $Player/BulletSpawnLocation.get_global_position()
 
 func _process_camera_movement(delta):
 	$PlayerArea.position.y -= scene_movement * delta

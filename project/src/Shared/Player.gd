@@ -6,7 +6,9 @@ export var constant_movement : Vector2
 export var max_velocity_orthogonal : float
 export var acceleration : float
 export var deceleration : float
+
 var gun_level : int
+var gun_weapon
 
 var base_movement : Vector2
 
@@ -26,8 +28,6 @@ func _ready():
 func _process(delta):
 	if !dead:
 		_process_movement(delta)
-		_process_bullet_spawns()
-		
 
 func _process_movement(delta):
 	if Input.is_action_pressed("move_left"):
@@ -62,10 +62,6 @@ func _process_sprite_change():
 		$AnimatedSprite.play("right")
 	else:
 		$AnimatedSprite.play("right_max")
-
-func _process_bullet_spawns():
-	$BulletSpawn1.position = position + Vector2(-5, 0)
-	$BulletSpawn2.position = position + Vector2(5, 0)
 
 func inflict(damage):
 	if vulnerable:

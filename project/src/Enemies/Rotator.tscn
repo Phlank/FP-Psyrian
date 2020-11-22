@@ -106,12 +106,12 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=24]
-radius = 4.18762
-height = 5.81018
+radius = 5.58923
+height = 8.08977
 
 [sub_resource type="CapsuleShape2D" id=25]
-radius = 5.15385
-height = 9.05769
+radius = 5.82547
+height = 8.16851
 
 [node name="Rotator" type="KinematicBody2D" groups=[
 "enemies",
@@ -119,13 +119,14 @@ height = 9.05769
 script = ExtResource( 2 )
 
 [node name="Animation" type="AnimatedSprite" parent="."]
-position = Vector2( 0.350767, 0.841846 )
+position = Vector2( 0.350767, 0.802474 )
 frames = SubResource( 23 )
 animation = "idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -0.47247 )
 shape = SubResource( 24 )
 
 [node name="HurtArea" type="Area2D" parent="."]
@@ -134,6 +135,7 @@ gravity = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea"]
 self_modulate = Color( 0.886275, 0.870588, 0.811765, 1 )
+position = Vector2( 0, -0.47247 )
 shape = SubResource( 25 )
 [connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
 [connection signal="body_entered" from="HurtArea" to="." method="_on_HurtArea_body_entered"]

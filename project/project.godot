@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Shared/Fade.gd"
 }, {
+"base": "BaseEnemy",
+"class": "GraySpike",
+"language": "GDScript",
+"path": "res://GraySpike.gd"
+}, {
 "base": "Node2D",
 "class": "HealthBar",
 "language": "GDScript",
@@ -37,21 +42,28 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "PlayerBullet",
 "language": "GDScript",
-"path": "res://src/Shared/PlayerBullet.gd"
+"path": "res://src/Weapons/PlasmaBullet.gd"
 }, {
 "base": "BaseEnemy",
 "class": "Rotator",
 "language": "GDScript",
 "path": "res://src/Enemies/Rotator.gd"
+}, {
+"base": "Node",
+"class": "WeaponInfo",
+"language": "GDScript",
+"path": "res://src/Weapons/WeaponInfo.gd"
 } ]
 _global_script_class_icons={
 "BaseEnemy": "",
 "Credits": "",
 "Fade": "",
+"GraySpike": "",
 "HealthBar": "",
 "Player": "",
 "PlayerBullet": "",
-"Rotator": ""
+"Rotator": "",
+"WeaponInfo": ""
 }
 
 [application]
