@@ -4,8 +4,8 @@ extends BaseEnemy
 export var velocity : Vector2
 export var acceleration : Vector2
 
-onready var is_active = false
-onready var is_inflicting = false
+var is_active = false
+var is_inflicting = false
 var inflicting_body
 
 signal death(score)
@@ -18,12 +18,13 @@ func _ready():
 func _process(delta):
 	if is_inflicting:
 		inflicting_body.inflict(1)
-	
+	_process_physics(delta)
+
+func _process_physics(delta):
+	delta *= 10
 	if is_active:
 		move_and_slide(velocity * delta)
 		velocity += acceleration * delta
-
-#func _process_physics(delta):
 
 func start_action():
 	is_active = true
@@ -33,14 +34,14 @@ func stop_action():
 
 func inflict(damage):
 	hitpoints = clamp(hitpoints - damage, 0, 9999)
-	print("Remaining hitpoints: ", hitpoints)
 	if (hitpoints == 0):
 		_kill()
 
 func _kill():
 	$CollisionShape2D.queue_free()
 	$Animation.play("death")
-	rotate(rand_range(0, 2 * PI))
+	$Animation.rotate(rand_range(0, 2 * PI))
+	$HurtArea.queue_free()
 	emit_signal("death", reward)
 
 func _on_Animation_animation_finished():
@@ -48,7 +49,6 @@ func _on_Animation_animation_finished():
 		queue_free()
 
 func _on_HurtArea_body_entered(body):
-	print("Body in hurtarea")
 	if body.is_in_group("player"):
 		is_inflicting = true
 		inflicting_body = body

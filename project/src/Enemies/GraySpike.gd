@@ -13,16 +13,19 @@ func _process(delta):
 	if is_inflicting:
 		inflicting_body.inflict(1)
 
+func start_action():
+	pass
+
 func inflict(damage):
 	hitpoints = clamp(hitpoints - damage, 0, 9999)
-	print("Remaining hitpoints: ", hitpoints)
 	if (hitpoints == 0):
 		_kill()
 
 func _kill():
 	$CollisionShape2D.queue_free()
 	$Animation.play("death")
-	rotate(rand_range(0, 2 * PI))
+	$Animation.rotate(rand_range(0, 2 * PI))
+	$HurtArea.queue_free()
 	emit_signal("death", reward)
 
 func _on_Animation_animation_finished():
@@ -30,7 +33,6 @@ func _on_Animation_animation_finished():
 		queue_free()
 
 func _on_HurtArea_body_entered(body):
-	print("Body in hurtarea")
 	if body.is_in_group("player"):
 		is_inflicting = true
 		inflicting_body = body

@@ -13,15 +13,13 @@ onready var dead_fade_started = false
 
 func _ready():
 	$Fade.fade_in()
-	$HealthBar.set_health(100)
+	$HUD/HealthBar.set_health(100)
 	since_last_fire = fire_rate
 	$Player.constant_movement = Vector2(0, -scene_movement)
 	$Player.gun_weapon = weapon_info.WeaponNames.PLASMA_CANNON
 
 func _process(delta):
 	if !dead:
-		$ScoreLabel.rect_position = $PlayerArea.position + Vector2(-500, -270)
-		$HealthBar.position = $PlayerArea.position + Vector2(-450, -280)
 		$Camera2D.position = $PlayerArea.position
 		if Input.is_action_pressed("fire"):
 			_process_attack(delta)
@@ -40,9 +38,6 @@ func _process_attack(delta):
 
 func _fire():
 	$FireSound.play()
-	print(str(weapon_info))
-	print(str($Player.gun_weapon))
-	print(str($Player.gun_level))
 	var projectile = weapon_info.get_projectile($Player.gun_weapon, $Player.gun_level)
 	add_child(projectile)
 	projectile.position = $Player/BulletSpawnLocation.get_global_position()
@@ -74,7 +69,7 @@ func _on_PlayerArea_area_exited(area):
 		area.queue_free()
 
 func _on_Player_health_changed(health):
-	$HealthBar.set_health(health)
+	$HUD/HealthBar.set_health(health)
 
 func _on_PlayerArea_body_entered(body):
 	if body.is_in_group("enemies"):

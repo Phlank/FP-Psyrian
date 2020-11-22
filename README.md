@@ -61,7 +61,11 @@ Title screen music is from myself.
 
 Level 1 music is [Title Screen by sawsquarenoise](https://freemusicarchive.org/music/sawsquarenoise/dojokratos/tittle-screen). CC-BY-4.0.
 
-Sound effects are from myself.
+Gem pickup sound is [Coin Pickup Sound V 0.2 by Davidsraba](https://freesound.org/people/Davidsraba/sounds/347174/). CC-1.0.
+
+Weapon/Powerup pickup sound is [item pickup sound(?) by Darsycho](https://freesound.org/people/Darsycho/sounds/442574/). CC-1.0.
+
+Other sound effects are from myself.
 
 ### Artwork:
 

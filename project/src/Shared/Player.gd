@@ -81,3 +81,9 @@ func _kill():
 	emit_signal("died")
 	$AnimatedSprite.play("death")
 	$DeathSound.play()
+
+func _on_PickupArea_area_entered(area):
+	if (area.is_in_group("pickups")):
+		if area.pickup_name == "PLASMA_CANNON_UPGRADE":
+			gun_level += 1
+		area.queue_free()

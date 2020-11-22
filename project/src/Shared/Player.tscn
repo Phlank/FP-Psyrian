@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/img/ship.png" type="Texture" id=1]
 [ext_resource path="res://src/Shared/Player.gd" type="Script" id=2]
@@ -118,6 +118,10 @@ animations = [ {
 radius = 7.83021
 height = 10.1346
 
+[sub_resource type="CapsuleShape2D" id=22]
+radius = 10.2064
+height = 6.19573
+
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
@@ -137,3 +141,9 @@ stream = ExtResource( 3 )
 
 [node name="BulletSpawnLocation" type="Node2D" parent="."]
 position = Vector2( 0, -15.3915 )
+
+[node name="PickupArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource( 22 )
+[connection signal="area_entered" from="PickupArea" to="." method="_on_PickupArea_area_entered"]
