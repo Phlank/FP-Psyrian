@@ -65,7 +65,7 @@ Level 1 music is [Title Screen by sawsquarenoise](https://freemusicarchive.org/m
 
 Gem pickup sound is [Coin Pickup Sound V 0.2 by Davidsraba](https://freesound.org/people/Davidsraba/sounds/347174/). CC-1.0.
 
-Weapon/Powerup pickup sound is [item pickup sound(?) by Darsycho](https://freesound.org/people/Darsycho/sounds/442574/). CC-1.0.
+Weapon/Powerup pickup sound is [Pickup Magic Bells mod.wav by ryusa](https://freesound.org/people/ryusa/sounds/531092/). CC-1.0.
 
 Other sound effects are from myself.
 
