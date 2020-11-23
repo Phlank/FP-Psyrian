@@ -13,9 +13,11 @@ Score as many points as you can!
 
 ## Reflection
 
-This first portion of the assignment came with a lot of hiccups as I moved forward, but that's to be expected. Using projects definitely helped me feel like I always had a gameplan moving forward and I never felt like I was wasting time as I worked on my project because of that. To me, that's one of the best parts of working in a sprint, and I know we didn't call it that at the beginning of the final, but that's really what it is.
+Something happened really early into this iteration: scope creep. At work, I've been operating in .NET Core 3.1 since June, and I love the resources it gives me to keep my code clean and expand my software very rapidly and safely. Godot has none of this, so this environment has been getting more and more difficult to cope with as the size of the project gets larger. However, I discovered something this iteration in using base objects: a base level holds all of the shared code and objects that each level uses, a base enemy holds some variables used between various enemies, etc.
 
-One issue I ran into this iteration was time; I had to spend a lot of my time on other projects or on work, and this class became an afterthought. This was especially with the election being on my mind consistently through the week. However, now at the end of the iteration, I'm very happy with what I've been able to put together and I feel like I have a really strong foundation for adding features and content in the next two iterations. I'll be planning them out on the projects tomorrow and making sure I give myself enough time to hit roadblocks early on this time.
+This has made my life so much easier when thinking about each level, each enemy, and even each bullet. It feels like I'm finally getting to a point where I feel comfortable adding onto my project with a strong purpose. Not that I couldn't complete a ticket prior to this iteration for the project, but I feel like I can focus solely on a single ticket at a time now with the number of objects I'm dealing with. I'm enjoying designing parts to this game now, and that makes me feel good. Trying to keep code clean in Godot is still a lot more difficult than in statically typed langauges, and every part of me wants to use GDScript that way, but that doesn't innately make GDScript worse. I have made a lot of google searches and landed on closed github issues for the Godot engine with a final comment of "Will not implement/add" with regards to many OOP concepts I want to use.
+
+In total, this iteration was more learning than productivity, but having felt like I can accomplish more in less time, I'm excited to see how the rest of the project pans out.
 
 ## Evaluation
 
