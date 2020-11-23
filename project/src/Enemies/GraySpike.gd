@@ -26,7 +26,6 @@ func _kill():
 	$Animation.play("death")
 	$Animation.rotate(rand_range(0, 2 * PI))
 	$HurtArea.queue_free()
-	emit_signal("death", reward)
 
 func _on_Animation_animation_finished():
 	if $Animation.animation == "death":

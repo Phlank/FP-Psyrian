@@ -21,3 +21,9 @@ func get_projectile(weapon, level: int) -> Node2D:
 			return plasma_cannon_lvl_3_scene.instance()
 	print("Could not find weapon " + str(weapon) + " with level " + str(level) + " in WeaponInfo")
 	return plasma_cannon_lvl_1_scene.instance()
+
+func get_weapon_delay(weapon) -> float:
+	if weapon == WeaponNames.PLASMA_CANNON:
+		return 0.1
+	else:
+		return 0.1

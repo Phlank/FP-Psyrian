@@ -103,7 +103,6 @@ shape = SubResource( 1 )
 [node name="Animation" type="AnimatedSprite" parent="."]
 position = Vector2( 0.467692, 0.467689 )
 frames = SubResource( 19 )
-frame = 3
 playing = true
 
 [node name="HurtArea" type="Area2D" parent="."]

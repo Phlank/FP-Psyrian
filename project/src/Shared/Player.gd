@@ -15,8 +15,6 @@ var base_movement : Vector2
 onready var vulnerable = true
 onready var dead = false
 
-var bullet_scene = load("res://src/Shared/PlayerBullet.tscn")
-
 signal health_changed(health)
 signal died()
 
@@ -28,6 +26,7 @@ func _ready():
 func _process(delta):
 	if !dead:
 		_process_movement(delta)
+		print(base_movement)
 
 func _process_movement(delta):
 	if Input.is_action_pressed("move_left"):
@@ -86,4 +85,3 @@ func _on_PickupArea_area_entered(area):
 	if (area.is_in_group("pickups")):
 		if area.pickup_name == "PLASMA_CANNON_UPGRADE":
 			gun_level += 1
-		area.queue_free()
