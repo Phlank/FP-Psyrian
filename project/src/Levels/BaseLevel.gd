@@ -10,6 +10,10 @@ onready var dead_fade_started = false
 
 onready var scene_movement = 200
 
+signal faded_out()
+signal faded_in()
+signal player_died()
+
 func _ready():
 	$Hud/Fade.fade_in()
 	$Hud/HealthBar.set_max($Player.health)
@@ -65,6 +69,8 @@ func _on_PlayerArea_area_exited(area):
 	# Bullets
 	if area.is_in_group("bullets"):
 		area.queue_free()
+	if area.is_in_group("enemy_bullets"):
+		area.queue_free()
 
 func _on_Player_health_changed(health):
 	$Hud/HealthBar.set_health(health)
@@ -73,6 +79,25 @@ func _on_PlayerArea_body_entered(body):
 	if body.is_in_group("enemies"):
 		body.start_action()
 
+func _on_PlayerArea_body_exited(body):
+	if body.is_in_group("enemies"):
+		body.queue_free()
+
 func _on_Player_died():
 	$BackgroundMusicStreamPlayer.stop()
 	dead = true
+	emit_signal("player_died")
+
+func _on_Hud_faded_out():
+	emit_signal("faded_out")
+
+func _on_ShootingShip_bullet_fired(bullet, ship):
+	add_child(bullet)
+	bullet.position = ship.position
+	var ship_position = ship.position
+	var player_position = $Player.position
+	var angle = Vector2(0, 1).angle_to(ship_position - player_position) - PI / 2
+	bullet.angle = angle
+
+
+

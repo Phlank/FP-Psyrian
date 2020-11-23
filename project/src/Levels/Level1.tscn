@@ -631,4 +631,5 @@ shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+[connection signal="faded_out" from="BaseLevel" to="." method="_on_BaseLevel_faded_out"]
 [connection signal="body_entered" from="WinArea" to="." method="_on_WinArea_body_entered"]

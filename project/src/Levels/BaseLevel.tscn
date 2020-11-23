@@ -33,6 +33,8 @@ stream = ExtResource( 5 )
 
 [node name="BackgroundMusicStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+[connection signal="faded_out" from="Hud" to="." method="_on_Hud_faded_out"]
 [connection signal="died" from="Player" to="." method="_on_Player_died"]
 [connection signal="health_changed" from="Player" to="." method="_on_Player_health_changed"]
 [connection signal="body_entered" from="PlayerArea" to="." method="_on_PlayerArea_body_entered"]
+[connection signal="body_exited" from="PlayerArea" to="." method="_on_PlayerArea_body_exited"]

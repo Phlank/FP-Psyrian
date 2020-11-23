@@ -26,7 +26,6 @@ func _ready():
 func _process(delta):
 	if !dead:
 		_process_movement(delta)
-		print(base_movement)
 
 func _process_movement(delta):
 	if Input.is_action_pressed("move_left"):
@@ -65,7 +64,6 @@ func _process_sprite_change():
 func inflict(damage):
 	if vulnerable:
 		health = clamp(health - damage, 0, 9999)
-		print(health)
 		emit_signal("health_changed", health)
 		if (health == 0):
 			_kill()
