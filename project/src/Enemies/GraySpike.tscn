@@ -83,7 +83,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
-"loop": true,
+"loop": false,
 "name": "death",
 "speed": 25.0
 } ]
@@ -103,6 +103,7 @@ shape = SubResource( 1 )
 [node name="Animation" type="AnimatedSprite" parent="."]
 position = Vector2( 0.467692, 0.467689 )
 frames = SubResource( 19 )
+frame = 2
 playing = true
 
 [node name="HurtArea" type="Area2D" parent="."]

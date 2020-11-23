@@ -4,6 +4,8 @@ extends BaseEnemy
 onready var is_inflicting = false
 var inflicting_body
 
+signal death(score)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	hitpoints = 120
@@ -22,10 +24,11 @@ func inflict(damage):
 		_kill()
 
 func _kill():
-	$CollisionShape2D.queue_free()
+	$CollisionShape2D.disabled = true
 	$Animation.play("death")
 	$Animation.rotate(rand_range(0, 2 * PI))
-	$HurtArea.queue_free()
+	$HurtArea.disconnect("area_entered", self, "_on_HurtArea_body_entered")
+	emit_signal("death", reward)
 
 func _on_Animation_animation_finished():
 	if $Animation.animation == "death":
