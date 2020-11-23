@@ -6,10 +6,7 @@ onready var damage = 5
 onready var is_impacted = false
 
 func _ready():
-	pass
-
-func _process(delta):
-	pass
+	add_to_group("bullets")
 
 func _physics_process(delta):
 	position += -transform.y * speed * delta
@@ -19,6 +16,7 @@ func _on_PlayerBullet_body_entered(body):
 		body.inflict(5)
 		speed = 0
 		$AnimatedSprite.play("impact")
+		rotate(rand_range(0, 2 * PI))
 		is_impacted = true
 
 func _on_AnimatedSprite_animation_finished():

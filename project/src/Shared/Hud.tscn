@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Shared/Fade.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Shared/HealthBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Shared/Hud.gd" type="Script" id=3]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="HealthBar" parent="." instance=ExtResource( 2 )]
+
+[node name="Fade" parent="." instance=ExtResource( 1 )]
+[connection signal="faded_in" from="Fade" to="." method="_on_Fade_faded_in"]
+[connection signal="faded_out" from="Fade" to="." method="_on_Fade_faded_out"]

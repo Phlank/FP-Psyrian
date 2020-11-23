@@ -1,10 +1,11 @@
-class_name Level1
+class_name Level2
 extends Node2D
 
 var win = false
 
 func _ready():
 	$BaseLevel/Player.gun_weapon = $BaseLevel.weapon_info.WeaponNames.PLASMA_CANNON
+	$BaseLevel/Player.gun_level = 2
 
 func _process(delta):
 	if !$BaseLevel.dead:
@@ -14,10 +15,6 @@ func _on_PlayerArea_body_entered(body):
 	if body.is_in_group("enemies"):
 		body.start_action()
 
-func _on_Player_died():
-	$BackgroundMusic.stop()
-	$BaseLevel.dead = true
-
 func _on_WinArea_body_entered(body):
 	if body.is_in_group("player"):
 		win = true
@@ -25,6 +22,6 @@ func _on_WinArea_body_entered(body):
 
 func _on_BaseLevel_faded_out():
 	if $BaseLevel.dead:
-		get_tree().change_scene("res://src/Levels/Level1.tscn")
-	else:
 		get_tree().change_scene("res://src/Levels/Level2.tscn")
+	else:
+		get_tree().change_scene("res://src/Shared/End.tscn")

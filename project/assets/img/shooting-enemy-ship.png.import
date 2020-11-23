@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_stars02.png-944c8ee775875b3a299f84a2713f9fe4.stex"
+path="res://.import/shooting-enemy-ship.png-059439c6eef21b69f784b26dd81352f8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/spr_stars02.png"
-dest_files=[ "res://.import/spr_stars02.png-944c8ee775875b3a299f84a2713f9fe4.stex" ]
+source_file="res://assets/img/shooting-enemy-ship.png"
+dest_files=[ "res://.import/shooting-enemy-ship.png-059439c6eef21b69f784b26dd81352f8.stex" ]
 
 [params]
 

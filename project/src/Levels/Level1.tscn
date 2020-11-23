@@ -1,16 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Levels/Level1.gd" type="Script" id=1]
-[ext_resource path="res://src/Enemies/Rotator.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Shared/HealthBar.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/Shared/StarBackground.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Shared/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Enemies/GraySpike.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Levels/BaseLevel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/wav/fire.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/wav/sawsquarenoise - Title Screen.wav" type="AudioStream" id=7]
-[ext_resource path="res://src/Shared/Fade.tscn" type="PackedScene" id=8]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1024, 600 )
+[ext_resource path="res://src/Enemies/Rotator.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/Pickups/PlasmaCannonPickup.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1000, 300 )
@@ -18,348 +14,622 @@ extents = Vector2( 1000, 300 )
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="StarBackground" parent="." instance=ExtResource( 4 )]
-layer = -128
+[node name="BaseLevel" parent="." instance=ExtResource( 3 )]
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Rotator6" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -205.641, -680.1 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -493.883, -533.763 )
 
-[node name="Rotator7" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -205.641, -863.835 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike2" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -296.33, -533.763 )
 
-[node name="Rotator8" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -205.641, -962.929 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike5" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -121.226, -634.784 )
 
-[node name="Rotator9" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -205.641, -772.476 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike8" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -65.1028, -686.418 )
 
-[node name="Rotator10" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 193.904, -1406.79 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike9" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -6.73492, -742.541 )
 
-[node name="Rotator11" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 193.904, -1670.22 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike10" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 53.878, -791.929 )
 
-[node name="Rotator12" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 193.904, -1493.06 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike11" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 114.491, -852.542 )
 
-[node name="Rotator13" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 193.904, -1583.23 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike12" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 171.427, -904.983 )
 
-[node name="Rotator14" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -27.3252, -2168.99 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike13" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 340.735, -1077.29 )
 
-[node name="Rotator15" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -27.0166, -2438.27 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike14" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 416.245, -1077.29 )
 
-[node name="Rotator16" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -28.076, -2356.28 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike15" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 489.867, -1077.29 )
 
-[node name="Rotator17" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -28.076, -2263.67 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike16" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 267.113, -1137.7 )
 
-[node name="Rotator18" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 32.6101, -2168.99 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike17" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 191.603, -1137.7 )
 
-[node name="Rotator19" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 32.9188, -2438.27 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike22" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 114.491, -1137.7 )
 
-[node name="Rotator20" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 31.8593, -2356.28 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike23" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 43.551, -1137.7 )
 
-[node name="Rotator21" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 31.8593, -2263.67 )
-scale = Vector2( 3, 3 )
+[node name="GraySpike24" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -27.6998, -1137.7 )
 
-[node name="Rotator22" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -33.8899, -2927.51 )
-scale = Vector2( 3, 3 )
-acceleration = Vector2( -1, 4 )
+[node name="GraySpike25" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -99.6998, -1137.7 )
 
-[node name="Rotator23" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -34.9493, -3061.85 )
-scale = Vector2( 3, 3 )
-acceleration = Vector2( -4, 1 )
+[node name="GraySpike26" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -172.859, -1137.7 )
 
-[node name="Rotator24" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -33.8899, -3013.77 )
-scale = Vector2( 3, 3 )
-acceleration = Vector2( -3, 2 )
+[node name="GraySpike27" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 0, -6267.42 )
 
-[node name="Rotator25" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -33.8899, -2969.43 )
-scale = Vector2( 3, 3 )
-acceleration = Vector2( -2, 3 )
+[node name="GraySpike28" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 53.5143, -6326.88 )
 
-[node name="Rotator26" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 26.0455, -2927.51 )
-scale = Vector2( 3, 3 )
-acceleration = Vector2( 1, 4 )
+[node name="GraySpike29" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -61.8387, -6324.5 )
 
-[node name="Rotator27" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 26.0455, -3060.79 )
-scale = Vector2( 3, 3 )
-acceleration = Vector2( 4, 1 )
+[node name="GraySpike48" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -3.1748, -6381.71 )
 
-[node name="Rotator30" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -35.4773, -3226.07 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 50 )
-acceleration = Vector2( 0, 5 )
+[node name="GraySpike49" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 50.3395, -6441.17 )
 
-[node name="Rotator31" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 25.5175, -3227.53 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 50 )
-acceleration = Vector2( 0, 5 )
+[node name="GraySpike50" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -65.0135, -6438.8 )
 
-[node name="Rotator32" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -171.754, -3712.98 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 300 )
-acceleration = Vector2( 0, -3 )
+[node name="GraySpike51" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 220.649, -6391.24 )
 
-[node name="Rotator33" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 158.956, -3712.98 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 300 )
-acceleration = Vector2( 0, -3 )
+[node name="GraySpike52" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 274.163, -6450.7 )
 
-[node name="Rotator34" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -108.112, -3891.79 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 350 )
-acceleration = Vector2( 1, -4 )
+[node name="GraySpike53" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 158.81, -6448.32 )
 
-[node name="Rotator36" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -224.025, -3888.01 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 350 )
-acceleration = Vector2( 0, -4 )
+[node name="GraySpike54" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 428.598, -6403.94 )
 
-[node name="Rotator35" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 102.906, -3890.53 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 350 )
-acceleration = Vector2( -1, -4 )
+[node name="GraySpike55" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 482.113, -6463.4 )
 
-[node name="Rotator37" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 222.599, -3891.79 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 350 )
-acceleration = Vector2( 0, -4 )
+[node name="GraySpike56" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 366.76, -6461.02 )
 
-[node name="Rotator38" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -158.406, -4828.91 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 300 )
-acceleration = Vector2( 0, -3 )
+[node name="GraySpike57" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -233.348, -6375.36 )
 
-[node name="Rotator39" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 172.305, -4828.91 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 300 )
-acceleration = Vector2( 0, -3 )
+[node name="GraySpike58" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -179.834, -6434.83 )
 
-[node name="Rotator40" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -100.103, -4671.33 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 350 )
-acceleration = Vector2( 1, -4 )
+[node name="GraySpike59" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -295.187, -6432.45 )
 
-[node name="Rotator41" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -216.016, -4667.55 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 350 )
-acceleration = Vector2( 0, -4 )
+[node name="GraySpike60" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -457.171, -6373.78 )
 
-[node name="Rotator42" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 110.915, -4670.07 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 350 )
-acceleration = Vector2( -1, -4 )
+[node name="GraySpike61" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -403.657, -6433.24 )
 
-[node name="Rotator43" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 230.608, -4671.33 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 350 )
-acceleration = Vector2( 0, -4 )
+[node name="GraySpike62" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -519.01, -6430.86 )
 
-[node name="Rotator44" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -400.055, -5589.86 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 400, 0 )
-acceleration = Vector2( -2, 0 )
+[node name="GraySpike30" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -122.488, -6378.02 )
 
-[node name="Rotator45" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 70.3493, -5306.7 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, -300 )
-acceleration = Vector2( 0, 3 )
+[node name="GraySpike31" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 108.218, -6386.34 )
 
-[node name="Rotator50" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 219.481, -5805.06 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 300 )
-acceleration = Vector2( 0, -3 )
+[node name="GraySpike32" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 166.489, -6325.69 )
 
-[node name="Rotator51" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -122.201, -5812.61 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, 300 )
-acceleration = Vector2( 0, -3 )
+[node name="GraySpike33" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 220.003, -6267.42 )
 
-[node name="Rotator46" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -396.497, -5415.29 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 400, 0 )
-acceleration = Vector2( -2, 0 )
+[node name="GraySpike34" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 274.707, -6331.64 )
 
-[node name="Rotator47" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 350.292, -5515.34 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( -400, 0 )
-acceleration = Vector2( 2, 0 )
+[node name="GraySpike35" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 328.221, -6387.53 )
 
-[node name="Rotator48" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 350.642, -5689.65 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( -400, 0 )
-acceleration = Vector2( 2, 0 )
+[node name="GraySpike44" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 379.201, -6330.45 )
 
-[node name="Rotator49" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( -258.336, -5305.81 )
-scale = Vector2( 3, 3 )
-velocity = Vector2( 0, -300 )
-acceleration = Vector2( 0, 3 )
+[node name="GraySpike45" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 432.715, -6272.18 )
 
-[node name="Rotator28" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 26.0455, -3013.77 )
-scale = Vector2( 3, 3 )
-acceleration = Vector2( 3, 2 )
+[node name="GraySpike46" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 487.418, -6336.4 )
 
-[node name="Rotator29" parent="Enemies" instance=ExtResource( 2 )]
-position = Vector2( 26.0455, -2969.43 )
-scale = Vector2( 3, 3 )
-acceleration = Vector2( 2, 3 )
+[node name="GraySpike47" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( 540.933, -6392.29 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( -1, 0 )
-current = true
+[node name="GraySpike36" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -179.57, -6324.5 )
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
-scale = Vector2( 3, 3 )
-health = 100
-constant_movement = Vector2( 0, 20 )
-max_velocity_orthogonal = 600.0
-acceleration = 200.0
-deceleration = 200.0
+[node name="GraySpike37" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -238.139, -6270.99 )
 
-[node name="PlayerArea" type="Area2D" parent="."]
-position = Vector2( -1, 1 )
-gravity_vec = Vector2( 0, 0 )
-gravity = 0.0
+[node name="GraySpike38" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -292.842, -6324.5 )
 
-[node name="PlayerAreaShape" type="CollisionShape2D" parent="PlayerArea"]
-position = Vector2( 0, -1.7818 )
-shape = SubResource( 1 )
+[node name="GraySpike39" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -347.546, -6378.02 )
+
+[node name="GraySpike40" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -403.394, -6321.33 )
+
+[node name="GraySpike41" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -461.962, -6267.81 )
+
+[node name="GraySpike42" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -516.666, -6321.33 )
+
+[node name="GraySpike43" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -571.369, -6374.84 )
+
+[node name="GraySpike18" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -263.579, -599.688 )
+
+[node name="GraySpike20" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -396.03, -599.688 )
+
+[node name="GraySpike21" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -461.132, -599.688 )
+
+[node name="GraySpike19" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -327.528, -599.688 )
+
+[node name="GraySpike6" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -172.859, -585.396 )
+
+[node name="GraySpike7" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -228.982, -533.763 )
+
+[node name="GraySpike3" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -361.433, -533.763 )
+
+[node name="GraySpike4" parent="Enemies" instance=ExtResource( 2 )]
+position = Vector2( -426.536, -533.763 )
+
+[node name="Rotator" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -31.498, -1604.91 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator2" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 34.4398, -1604.91 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator3" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 83.1547, -1667.91 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator4" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -82.0233, -1672.63 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator5" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -137.712, -1739.64 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator6" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 125.629, -1741.53 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator7" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 178.486, -1811.38 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator8" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -189.625, -1811.38 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator9" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -3.68173, -1705.72 )
+velocity = Vector2( 0, -500 )
+
+[node name="Rotator10" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 58.614, -1777.4 )
+velocity = Vector2( 0, -400 )
+
+[node name="Rotator11" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -62.2019, -1781.17 )
+velocity = Vector2( 0, -400 )
+
+[node name="Rotator12" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -123.554, -1848.19 )
+velocity = Vector2( 0, -400 )
+
+[node name="Rotator13" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 113.359, -1851.02 )
+velocity = Vector2( 0, -400 )
+
+[node name="Rotator14" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -255.177, -1907.64 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator15" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -189.239, -1907.64 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator16" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -140.524, -1970.63 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator17" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -305.702, -1975.35 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator18" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -361.39, -2042.37 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator19" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -98.0495, -2044.25 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator20" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -45.1925, -2114.1 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator40" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -48.3287, -3091.44 )
+acceleration = Vector2( -150, 0 )
+
+[node name="Rotator41" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -44.4681, -3167.72 )
+acceleration = Vector2( -150, 0 )
+
+[node name="Rotator42" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -48.7059, -3250.36 )
+acceleration = Vector2( -200, 0 )
+
+[node name="Rotator43" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -44.4681, -3335.12 )
+acceleration = Vector2( -250, 0 )
+
+[node name="Rotator44" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 434.786, -3085.08 )
+acceleration = Vector2( -150, 0 )
+
+[node name="Rotator45" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 438.647, -3161.37 )
+acceleration = Vector2( -150, 0 )
+
+[node name="Rotator46" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 434.409, -3244 )
+acceleration = Vector2( -200, 0 )
+
+[node name="Rotator47" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 438.647, -3328.76 )
+acceleration = Vector2( -250, 0 )
+
+[node name="Rotator56" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -37.9213, -3746.55 )
+acceleration = Vector2( -150, 0 )
+
+[node name="Rotator57" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -34.0606, -3812.15 )
+acceleration = Vector2( -150, 0 )
+
+[node name="Rotator58" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -38.2984, -3905.47 )
+acceleration = Vector2( -200, 0 )
+
+[node name="Rotator59" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -34.0606, -3990.23 )
+acceleration = Vector2( -250, 0 )
+
+[node name="Rotator60" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 445.194, -3740.19 )
+acceleration = Vector2( -150, 0 )
+
+[node name="Rotator61" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 449.055, -3816.47 )
+acceleration = Vector2( -150, 0 )
+
+[node name="Rotator62" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 444.817, -3899.11 )
+acceleration = Vector2( -200, 0 )
+
+[node name="Rotator63" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 449.055, -3983.87 )
+acceleration = Vector2( -250, 0 )
+
+[node name="Rotator48" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -440.33, -3421.99 )
+acceleration = Vector2( 150, 0 )
+
+[node name="Rotator49" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -436.469, -3498.27 )
+acceleration = Vector2( 150, 0 )
+
+[node name="Rotator50" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -440.707, -3580.91 )
+acceleration = Vector2( 200, 0 )
+
+[node name="Rotator51" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -436.469, -3665.67 )
+acceleration = Vector2( 250, 0 )
+
+[node name="Rotator52" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 42.7852, -3415.64 )
+acceleration = Vector2( 150, 0 )
+
+[node name="Rotator53" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 46.6458, -3491.92 )
+acceleration = Vector2( 150, 0 )
+
+[node name="Rotator54" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 42.408, -3574.56 )
+acceleration = Vector2( 200, 0 )
+
+[node name="Rotator55" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 46.6458, -3659.31 )
+acceleration = Vector2( 250, 0 )
+
+[node name="Rotator64" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -417.049, -4080.04 )
+acceleration = Vector2( 150, 0 )
+
+[node name="Rotator65" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -413.188, -4156.33 )
+acceleration = Vector2( 150, 0 )
+
+[node name="Rotator66" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -417.426, -4238.96 )
+acceleration = Vector2( 200, 0 )
+
+[node name="Rotator67" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -413.188, -4323.72 )
+acceleration = Vector2( 250, 0 )
+
+[node name="Rotator68" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 66.0662, -4073.69 )
+acceleration = Vector2( 150, 0 )
+
+[node name="Rotator69" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 69.9268, -4149.97 )
+acceleration = Vector2( 150, 0 )
+
+[node name="Rotator70" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 65.689, -4232.61 )
+acceleration = Vector2( 200, 0 )
+
+[node name="Rotator71" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 69.9268, -4320.19 )
+acceleration = Vector2( 250, 0 )
+
+[node name="Rotator72" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -23.4113, -4866.08 )
+velocity = Vector2( -500, 0 )
+
+[node name="Rotator73" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 23.6663, -4863.41 )
+velocity = Vector2( 500, 0 )
+
+[node name="Rotator74" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -23.4113, -4949.3 )
+velocity = Vector2( -350, 150 )
+
+[node name="Rotator75" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 23.6663, -4951.03 )
+velocity = Vector2( 350, 150 )
+
+[node name="Rotator76" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 22.3653, -5035.83 )
+velocity = Vector2( 250, 250 )
+
+[node name="Rotator77" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -24.4714, -5032.79 )
+velocity = Vector2( -250, 250 )
+
+[node name="Rotator78" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -25.2651, -5117.58 )
+velocity = Vector2( -125, 375 )
+
+[node name="Rotator79" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 23.1507, -5117.58 )
+velocity = Vector2( 125, 375 )
+
+[node name="Rotator80" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 22.357, -5196.95 )
+velocity = Vector2( 0, 500 )
+
+[node name="Rotator81" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -26.0588, -5196.15 )
+velocity = Vector2( 0, 500 )
+
+[node name="Rotator82" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -250.149, -5290.37 )
+velocity = Vector2( -500, 0 )
+
+[node name="Rotator83" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -203.071, -5287.7 )
+velocity = Vector2( 500, 0 )
+
+[node name="Rotator84" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -250.149, -5373.59 )
+velocity = Vector2( -350, 150 )
+
+[node name="Rotator85" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -203.071, -5375.32 )
+velocity = Vector2( 350, 150 )
+
+[node name="Rotator86" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -204.372, -5460.12 )
+velocity = Vector2( 250, 250 )
+
+[node name="Rotator87" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -251.209, -5457.08 )
+velocity = Vector2( -250, 250 )
+
+[node name="Rotator88" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -252.002, -5541.87 )
+velocity = Vector2( -125, 375 )
+
+[node name="Rotator89" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -203.587, -5541.87 )
+velocity = Vector2( 125, 375 )
+
+[node name="Rotator90" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -204.38, -5621.24 )
+velocity = Vector2( 0, 500 )
+
+[node name="Rotator91" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -252.796, -5620.44 )
+velocity = Vector2( 0, 500 )
+
+[node name="Rotator92" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 243.735, -5723.64 )
+velocity = Vector2( -500, 0 )
+
+[node name="Rotator93" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 290.812, -5720.97 )
+velocity = Vector2( 500, 0 )
+
+[node name="Rotator94" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 243.735, -5806.86 )
+velocity = Vector2( -350, 150 )
+
+[node name="Rotator95" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 290.812, -5808.59 )
+velocity = Vector2( 350, 150 )
+
+[node name="Rotator96" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 289.511, -5893.39 )
+velocity = Vector2( 250, 250 )
+
+[node name="Rotator97" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 242.675, -5890.35 )
+velocity = Vector2( -250, 250 )
+
+[node name="Rotator98" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 241.881, -5975.14 )
+velocity = Vector2( -125, 375 )
+
+[node name="Rotator99" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 290.297, -5975.14 )
+velocity = Vector2( 125, 375 )
+
+[node name="Rotator100" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 289.503, -6054.51 )
+velocity = Vector2( 0, 500 )
+
+[node name="Rotator101" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 241.087, -6053.71 )
+velocity = Vector2( 0, 500 )
+
+[node name="Rotator21" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -413.303, -2114.1 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator22" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -227.36, -2008.44 )
+velocity = Vector2( 0, -500 )
+
+[node name="Rotator23" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -165.064, -2080.12 )
+velocity = Vector2( 0, -400 )
+
+[node name="Rotator24" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -285.88, -2083.9 )
+velocity = Vector2( 0, -400 )
+
+[node name="Rotator25" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -347.232, -2150.91 )
+velocity = Vector2( 0, -400 )
+
+[node name="Rotator26" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( -110.32, -2153.74 )
+velocity = Vector2( 0, -400 )
+
+[node name="Rotator27" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 197.226, -1909.32 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator28" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 263.164, -1909.32 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator29" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 311.878, -1972.31 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator30" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 146.7, -1977.03 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator31" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 91.0118, -2044.05 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator32" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 354.353, -2045.94 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator33" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 407.21, -2115.78 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator34" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 39.0988, -2115.78 )
+velocity = Vector2( 0, 400 )
+
+[node name="Rotator35" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 225.042, -2010.12 )
+velocity = Vector2( 0, -500 )
+
+[node name="Rotator36" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 287.338, -2081.8 )
+velocity = Vector2( 0, -400 )
+
+[node name="Rotator37" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 166.522, -2085.58 )
+velocity = Vector2( 0, -400 )
+
+[node name="Rotator38" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 105.17, -2152.59 )
+velocity = Vector2( 0, -400 )
+
+[node name="Rotator39" parent="Enemies" instance=ExtResource( 9 )]
+position = Vector2( 342.082, -2155.42 )
+velocity = Vector2( 0, -400 )
+
+[node name="Pickups" type="Node2D" parent="."]
+
+[node name="PlasmaCannonPickup" parent="Pickups" instance=ExtResource( 10 )]
+position = Vector2( 0, -4626.42 )
 
 [node name="FireSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = -9.0
 
-[node name="HealthBar" parent="." instance=ExtResource( 3 )]
-
-[node name="ScoreLabel" type="Label" parent="."]
-margin_right = 100.0
-margin_bottom = 20.0
-text = "Score: "
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -6.0
+volume_db = -12.0
 autoplay = true
 
 [node name="WinArea" type="Area2D" parent="."]
 position = Vector2( 0, -6748.38 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea"]
-position = Vector2( 0, -1411.42 )
+position = Vector2( -11.6536, -1187.42 )
 shape = SubResource( 2 )
 
-[node name="Fade" parent="." instance=ExtResource( 8 )]
-light_mask = 0
-position = Vector2( -1471.27, 2937.38 )
-scale = Vector2( 3, -30 )
-[connection signal="death" from="Enemies/Rotator6" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator7" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator8" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator9" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator10" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator11" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator12" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator13" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator14" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator15" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator16" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator17" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator18" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator19" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator20" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator21" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator22" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator23" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator24" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator25" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator26" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator27" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator30" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator31" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator32" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator33" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator34" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator36" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator35" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator37" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator38" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator39" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator40" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator41" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator42" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator43" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator44" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator45" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator50" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator51" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator46" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator47" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator48" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator49" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator28" to="." method="_on_Rotator_death"]
-[connection signal="death" from="Enemies/Rotator29" to="." method="_on_Rotator_death"]
-[connection signal="died" from="Player" to="." method="_on_Player_died"]
-[connection signal="health_changed" from="Player" to="." method="_on_Player_health_changed"]
-[connection signal="area_exited" from="PlayerArea" to="." method="_on_PlayerArea_area_exited"]
-[connection signal="body_entered" from="PlayerArea" to="." method="_on_PlayerArea_body_entered"]
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+[connection signal="faded_out" from="BaseLevel" to="." method="_on_BaseLevel_faded_out"]
 [connection signal="body_entered" from="WinArea" to="." method="_on_WinArea_body_entered"]
-[connection signal="faded_out" from="Fade" to="." method="_on_Fade_faded_out"]

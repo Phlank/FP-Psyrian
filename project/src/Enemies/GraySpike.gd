@@ -1,36 +1,20 @@
-class_name Rotator
+class_name GraySpike
 extends BaseEnemy
 
-export var velocity : Vector2
-export var acceleration : Vector2
-
-var is_active = false
-var is_inflicting = false
+onready var is_inflicting = false
 var inflicting_body
 
-signal death(score)
-
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	hitpoints = 20
-	reward = 50
-	contact_damage = 1
+	hitpoints = 120
+	reward = 100
 
 func _process(delta):
 	if is_inflicting:
 		inflicting_body.inflict(1)
-	_process_physics(delta)
-
-func _process_physics(delta):
-	delta *= 10
-	if is_active:
-		move_and_slide(velocity * delta)
-		velocity += acceleration * delta
 
 func start_action():
-	is_active = true
-
-func stop_action():
-	is_active = false
+	pass
 
 func inflict(damage):
 	hitpoints = clamp(hitpoints - damage, 0, 9999)
@@ -42,7 +26,6 @@ func _kill():
 	$Animation.play("death")
 	$Animation.rotate(rand_range(0, 2 * PI))
 	$HurtArea.queue_free()
-	emit_signal("death", reward)
 
 func _on_Animation_animation_finished():
 	if $Animation.animation == "death":
@@ -53,7 +36,6 @@ func _on_HurtArea_body_entered(body):
 		is_inflicting = true
 		inflicting_body = body
 		body.inflict(contact_damage)
-	pass # Replace with function body.
 
 func _on_HurtArea_body_exited(body):
 	if body.is_in_group("player"):

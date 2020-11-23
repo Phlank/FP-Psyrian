@@ -1,0 +1,158 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/Shared/SpaceTilemap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Levels/BaseLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Levels/Level2.gd" type="Script" id=3]
+[ext_resource path="res://src/Pickups/PlasmaCannonPickup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Enemies/ShootingShip.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 529.384, 125.802 )
+
+[node name="Level2" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="SpaceTilemap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( -1900553, 16, 0, -1900552, 16, 0, -1900551, 16, 0, -1900550, 16, 0, -1900549, 16, 0, -1900548, 16, 0, -1900547, 16, 0, -1900546, 16, 0, -1900545, 16, 0, -1966080, 16, 0, -1966079, 16, 0, -1966078, 16, 0, -1966077, 16, 0, -1966076, 16, 0, -1966075, 16, 0, -1966074, 16, 0, -1966073, 16, 0, -1966072, 16, 0, -1835017, 19, 0, -1835016, 19, 0, -1835015, 19, 0, -1835014, 19, 0, -1835013, 19, 0, -1835012, 19, 0, -1835011, 19, 0, -1835010, 19, 0, -1835009, 19, 0, -1900544, 19, 0, -1900543, 19, 0, -1900542, 19, 0, -1900541, 19, 0, -1900540, 19, 0, -1900539, 19, 0, -1900538, 19, 0, -1900537, 19, 0, -1900536, 19, 0, -1769481, 8, 0, -1769480, 8, 0, -1769479, 19, 0, -1769478, 8, 0, -1769477, 8, 0, -1769476, 8, 0, -1769475, 19, 0, -1769474, 8, 0, -1769473, 8, 0, -1835008, 8, 0, -1835007, 8, 0, -1835006, 19, 0, -1835005, 8, 0, -1835004, 8, 0, -1835003, 8, 0, -1835002, 19, 0, -1835001, 8, 0, -1835000, 8, 0, -1703945, 19, 0, -1703944, 19, 0, -1703943, 19, 0, -1703942, 19, 0, -1703941, 19, 0, -1703940, 19, 0, -1703939, 19, 0, -1703938, 19, 0, -1703937, 30, 0, -1769472, 43, 0, -1769471, 43, 0, -1769470, 43, 0, -1769469, 43, 0, -1769468, 43, 0, -1769467, 43, 0, -1769466, 40, 0, -1769465, 19, 0, -1769464, 19, 0, -1638409, 19, 0, -1638408, 19, 0, -1638407, 39, 0, -1638406, 43, 0, -1638405, 43, 0, -1638404, 43, 0, -1638403, 43, 0, -1638402, 43, 0, -1638401, 38, 0, -1703936, 19, 0, -1703935, 19, 0, -1703934, 19, 0, -1703933, 19, 0, -1703932, 19, 0, -1703931, 19, 0, -1703930, 19, 0, -1703929, 19, 0, -1703928, 19, 0, -1572873, 19, 0, -1572872, 19, 0, -1572871, 19, 0, -1572870, 19, 0, -1572869, 19, 0, -1572868, 19, 0, -1572867, 19, 0, -1572866, 19, 0, -1572865, 19, 0, -1638400, 19, 0, -1638399, 19, 0, -1638398, 19, 0, -1638397, 19, 0, -1638396, 19, 0, -1638395, 19, 0, -1638394, 19, 0, -1638393, 19, 0, -1638392, 19, 0, -1507337, 19, 0, -1507336, 19, 0, -1507335, 19, 0, -1507334, 19, 0, -1507333, 19, 0, -1507332, 19, 0, -1507331, 19, 0, -1507330, 7, 0, -1507329, 19, 0, -1572864, 19, 0, -1572863, 7, 0, -1572862, 19, 0, -1572861, 19, 0, -1572860, 19, 0, -1572859, 19, 0, -1572858, 19, 0, -1572857, 19, 0, -1572856, 19, 0, -1441801, 19, 0, -1441800, 19, 0, -1441799, 19, 0, -1441798, 19, 0, -1441797, 19, 0, -1441796, 19, 0, -1441795, 19, 0, -1441794, 7, 0, -1441793, 19, 0, -1507328, 19, 0, -1507327, 7, 0, -1507326, 19, 0, -1507325, 19, 0, -1507324, 19, 0, -1507323, 19, 0, -1507322, 19, 0, -1507321, 19, 0, -1507320, 19, 0, -1376265, 19, 0, -1376264, 19, 0, -1376263, 19, 0, -1376262, 19, 0, -1376261, 19, 0, -1376260, 19, 0, -1376259, 19, 0, -1376258, 7, 0, -1376257, 19, 0, -1441792, 19, 0, -1441791, 7, 0, -1441790, 19, 0, -1441789, 19, 0, -1441788, 19, 0, -1441787, 19, 0, -1441786, 19, 0, -1441785, 19, 0, -1441784, 19, 0, -1310729, 19, 0, -1310728, 19, 0, -1310727, 19, 0, -1310726, 19, 0, -1310725, 19, 0, -1310724, 19, 0, -1310723, 19, 0, -1310722, 7, 0, -1310721, 19, 0, -1376256, 19, 0, -1376255, 7, 0, -1376254, 19, 0, -1376253, 19, 0, -1376252, 19, 0, -1376251, 19, 0, -1376250, 19, 0, -1376249, 19, 0, -1376248, 19, 0, -1245193, 19, 0, -1245192, 19, 0, -1245191, 19, 0, -1245190, 19, 0, -1245189, 19, 0, -1245188, 19, 0, -1245187, 19, 0, -1245186, 7, 0, -1245185, 19, 0, -1310720, 19, 0, -1310719, 7, 0, -1310718, 19, 0, -1310717, 19, 0, -1310716, 19, 0, -1310715, 19, 0, -1310714, 19, 0, -1310713, 19, 0, -1310712, 19, 0, -1179657, 19, 0, -1179656, 19, 0, -1179655, 19, 0, -1179654, 19, 0, -1179653, 19, 0, -1179652, 19, 0, -1179651, 19, 0, -1179650, 7, 0, -1179649, 19, 0, -1245184, 19, 0, -1245183, 7, 0, -1245182, 19, 0, -1245181, 19, 0, -1245180, 19, 0, -1245179, 19, 0, -1245178, 19, 0, -1245177, 19, 0, -1245176, 19, 0, -1114121, 19, 0, -1114120, 19, 0, -1114119, 19, 0, -1114118, 19, 0, -1114117, 19, 0, -1114116, 19, 0, -1114115, 19, 0, -1114114, 19, 0, -1114113, 19, 0, -1179648, 19, 0, -1179647, 19, 0, -1179646, 19, 0, -1179645, 19, 0, -1179644, 19, 0, -1179643, 19, 0, -1179642, 19, 0, -1179641, 19, 0, -1179640, 19, 0, -1048585, 19, 0, -1048584, 19, 0, -1048583, 19, 0, -1048582, 19, 0, -1048581, 19, 0, -1048580, 19, 0, -1048579, 19, 0, -1048578, 19, 0, -1048577, 19, 0, -1114112, 19, 0, -1114111, 19, 0, -1114110, 19, 0, -1114109, 19, 0, -1114108, 19, 0, -1114107, 19, 0, -1114106, 19, 0, -1114105, 19, 0, -1114104, 19, 0, -983049, 19, 0, -983048, 19, 0, -983047, 19, 0, -983046, 19, 0, -983045, 19, 0, -983044, 19, 0, -983043, 19, 0, -983042, 19, 0, -983041, 19, 0, -1048576, 19, 0, -1048575, 19, 0, -1048574, 19, 0, -1048573, 13, 0, -1048572, 13, 0, -1048571, 19, 0, -1048570, 19, 0, -1048569, 19, 0, -1048568, 19, 0, -917513, 19, 0, -917512, 19, 0, -917511, 19, 0, -917510, 19, 0, -917509, 19, 0, -917508, 19, 0, -917507, 19, 0, -917506, 19, 0, -917505, 19, 0, -983040, 12, 0, -983039, 12, 0, -983038, 19, 0, -983037, 19, 0, -983036, 19, 0, -983035, 19, 0, -983034, 19, 0, -983033, 19, 0, -983032, 19, 0, -851977, 19, 0, -851976, 19, 0, -851975, 19, 0, -851974, 19, 0, -851973, 19, 0, -851972, 19, 0, -851971, 12, 0, -851970, 12, 0, -851969, 19, 0, -917504, 19, 0, -917503, 19, 0, -917502, 19, 0, -917501, 19, 0, -917500, 19, 0, -917499, 19, 0, -917498, 19, 0, -917497, 9, 0, -917496, 19, 0, -786441, 19, 0, -786440, 19, 0, -786439, 19, 0, -786438, 19, 0, -786437, 19, 0, -786436, 19, 0, -786435, 19, 0, -786434, 19, 0, -786433, 19, 0, -851968, 19, 0, -851967, 19, 0, -851966, 19, 0, -851965, 11, 0, -851964, 19, 0, -851963, 19, 0, -851962, 19, 0, -851961, 19, 0, -851960, 19, 0, -720905, 19, 0, -720904, 19, 0, -720903, 19, 0, -720902, 19, 0, -720901, 19, 0, -720900, 19, 0, -720899, 19, 0, -720898, 19, 0, -720897, 19, 0, -786432, 19, 0, -786431, 19, 0, -786430, 19, 0, -786429, 19, 0, -786428, 9, 0, -786427, 19, 0, -786426, 19, 0, -786425, 19, 0, -786424, 19, 0, -655369, 19, 0, -655368, 19, 0, -655367, 19, 0, -655366, 19, 0, -655365, 19, 0, -655364, 19, 0, -655363, 19, 0, -655362, 19, 0, -655361, 19, 0, -720896, 19, 0, -720895, 19, 0, -720894, 19, 0, -720893, 19, 0, -720892, 19, 0, -720891, 19, 0, -720890, 19, 0, -720889, 19, 0, -720888, 19, 0, -589835, 22, 0, -589834, 22, 0, -589833, 22, 0, -589832, 22, 0, -589831, 22, 0, -589830, 22, 0, -589829, 22, 0, -589828, 22, 0, -589827, 22, 0, -589826, 22, 0, -589825, 22, 0, -655360, 22, 0, -655359, 22, 0, -655358, 22, 0, -655357, 22, 0, -655356, 22, 0, -655355, 22, 0, -655354, 22, 0, -655353, 22, 0, -655352, 22, 0, -655351, 22, 0, -655350, 22, 0, -655349, 22, 0, -655348, 22, 0, -327684, 15, 0, -327683, 16, 0, -327682, 16, 0, -327681, 16, 0, -393216, 16, 0, -393215, 16, 0, -393214, 16, 0, -393213, 17, 0, -262148, 18, 0, -262147, 19, 0, -262146, 19, 0, -262145, 19, 0, -327680, 19, 0, -327679, 19, 0, -327678, 19, 0, -327677, 20, 0, -196612, 18, 0, -196611, 19, 0, -196610, 19, 0, -196609, 19, 0, -262144, 19, 0, -262143, 19, 0, -262142, 19, 0, -262141, 20, 0, -131076, 18, 0, -131075, 19, 0, -131074, 19, 0, -131073, 19, 0, -196608, 19, 0, -196607, 19, 0, -196606, 19, 0, -196605, 20, 0, -65540, 18, 0, -65539, 19, 0, -65538, 19, 0, -65537, 19, 0, -131072, 19, 0, -131071, 19, 0, -131070, 19, 0, -131069, 20, 0, -4, 18, 0, -3, 19, 0, -2, 19, 0, -1, 19, 0, -65536, 19, 0, -65535, 19, 0, -65534, 19, 0, -65533, 20, 0, 65532, 18, 0, 65533, 19, 0, 65534, 19, 0, 65535, 19, 0, 0, 19, 0, 1, 19, 0, 2, 19, 0, 3, 20, 0, 131068, 18, 0, 131069, 19, 0, 131070, 19, 0, 131071, 19, 0, 65536, 19, 0, 65537, 19, 0, 65538, 19, 0, 65539, 20, 0, 196604, 21, 0, 196605, 22, 0, 196606, 22, 0, 196607, 22, 0, 131072, 22, 0, 131073, 22, 0, 131074, 22, 0, 131075, 23, 0 )
+
+[node name="BaseLevel" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1.5874, -4.76214 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="ShootingShip" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -393.569, -978.375 )
+
+[node name="ShootingShip2" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -311.024, -978.375 )
+
+[node name="ShootingShip3" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -225.305, -978.375 )
+
+[node name="ShootingShip4" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -147.522, -978.375 )
+
+[node name="ShootingShip5" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -69.7396, -978.375 )
+
+[node name="ShootingShip6" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 60.2763, -1134.55 )
+
+[node name="ShootingShip7" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 142.821, -1134.55 )
+
+[node name="ShootingShip8" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 228.541, -1134.55 )
+
+[node name="ShootingShip9" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 306.323, -1134.55 )
+
+[node name="ShootingShip10" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 384.106, -1134.55 )
+
+[node name="ShootingShip11" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -373.947, -1281.86 )
+
+[node name="ShootingShip12" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -291.402, -1281.86 )
+
+[node name="ShootingShip13" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -205.682, -1281.86 )
+
+[node name="ShootingShip14" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -127.899, -1281.86 )
+
+[node name="ShootingShip15" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -50.1169, -1281.86 )
+
+[node name="ShootingShip16" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -382.355, -1138.91 )
+
+[node name="ShootingShip17" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -299.811, -1138.91 )
+
+[node name="ShootingShip18" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -214.091, -1138.91 )
+
+[node name="ShootingShip19" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -136.308, -1138.91 )
+
+[node name="ShootingShip20" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( -58.5258, -1138.91 )
+
+[node name="ShootingShip21" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 63.3195, -994.274 )
+
+[node name="ShootingShip22" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 145.864, -994.274 )
+
+[node name="ShootingShip23" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 231.584, -994.274 )
+
+[node name="ShootingShip24" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 309.367, -994.274 )
+
+[node name="ShootingShip25" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 387.149, -994.274 )
+
+[node name="ShootingShip26" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 61.6378, -1281.86 )
+
+[node name="ShootingShip27" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 144.183, -1281.86 )
+
+[node name="ShootingShip28" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 229.902, -1281.86 )
+
+[node name="ShootingShip29" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 307.685, -1281.86 )
+
+[node name="ShootingShip30" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 385.467, -1281.86 )
+
+[node name="Pickups" type="Node2D" parent="."]
+
+[node name="PlasmaCannonPickup" parent="Pickups" instance=ExtResource( 4 )]
+position = Vector2( 5.06279, -671.606 )
+
+[node name="WinArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea"]
+position = Vector2( 0, -3161.24 )
+shape = SubResource( 1 )
+[connection signal="faded_out" from="BaseLevel" to="." method="_on_BaseLevel_faded_out"]
+[connection signal="player_died" from="BaseLevel" to="." method="_on_BaseLevel_player_died"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip2" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip3" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip4" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip5" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip6" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip7" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip8" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip9" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip10" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip11" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip12" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip13" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip14" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip15" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip16" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip17" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip18" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip19" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip20" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip21" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip22" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip23" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip24" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip25" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip26" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip27" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip28" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip29" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="bullet_fired" from="Enemies/ShootingShip30" to="BaseLevel" method="_on_ShootingShip_bullet_fired"]
+[connection signal="body_entered" from="WinArea" to="." method="_on_WinArea_body_entered"]

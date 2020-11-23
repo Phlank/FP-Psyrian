@@ -7,13 +7,13 @@ export var max_velocity_orthogonal : float
 export var acceleration : float
 export var deceleration : float
 
-var base_movement : Vector2
 var gun_level : int
+var gun_weapon
+
+var base_movement : Vector2
 
 onready var vulnerable = true
 onready var dead = false
-
-var bullet_scene = load("res://src/Shared/PlayerBullet.tscn")
 
 signal health_changed(health)
 signal died()
@@ -26,8 +26,6 @@ func _ready():
 func _process(delta):
 	if !dead:
 		_process_movement(delta)
-		_process_bullet_spawns()
-		
 
 func _process_movement(delta):
 	if Input.is_action_pressed("move_left"):
@@ -63,14 +61,9 @@ func _process_sprite_change():
 	else:
 		$AnimatedSprite.play("right_max")
 
-func _process_bullet_spawns():
-	$BulletSpawn1.position = position + Vector2(-5, 0)
-	$BulletSpawn2.position = position + Vector2(5, 0)
-
 func inflict(damage):
 	if vulnerable:
 		health = clamp(health - damage, 0, 9999)
-		print(health)
 		emit_signal("health_changed", health)
 		if (health == 0):
 			_kill()
@@ -85,3 +78,8 @@ func _kill():
 	emit_signal("died")
 	$AnimatedSprite.play("death")
 	$DeathSound.play()
+
+func _on_PickupArea_area_entered(area):
+	if (area.is_in_group("pickups")):
+		if area.pickup_name == "PLASMA_CANNON_UPGRADE":
+			gun_level += 1

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_stars02.png-944c8ee775875b3a299f84a2713f9fe4.stex"
+path="res://.import/plasma-cannon-upgrade.png-ebcb3217f7f5f9d565df284fa5fa1e44.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/img/spr_stars02.png"
-dest_files=[ "res://.import/spr_stars02.png-944c8ee775875b3a299f84a2713f9fe4.stex" ]
+source_file="res://assets/img/plasma-cannon-upgrade.png"
+dest_files=[ "res://.import/plasma-cannon-upgrade.png-ebcb3217f7f5f9d565df284fa5fa1e44.stex" ]
 
 [params]
 
