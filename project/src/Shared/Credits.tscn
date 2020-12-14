@@ -27,12 +27,24 @@ custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
 bbcode_text = "Music
 
-Title Screen: [url=\"https://soundcloud.com/phlankmusic\"]8-bit short by phlank[/url] 
-Level 1 music: [url=https://freemusicarchive.org/music/sawsquarenoise/dojokratos/tittle-screen]Title Screen by sawsquarenoise[/url] | [url=https://creativecommons.org/licenses/by/4.0/legalcode]license[/url]"
+Title Screen: [url=https://soundcloud.com/phlankmusic]8-bit short by phlank[/url] 
+Level 1 music: [url=https://freemusicarchive.org/music/sawsquarenoise/dojokratos/tittle-screen]Title Screen by sawsquarenoise[/url] | [url=https://creativecommons.org/licenses/by/4.0/legalcode]license[/url]
+Boss Bullet Sound 1: [url=https://freesound.org/people/inferno/sounds/18397/]smallas by inferno[/url] | [url=https://creativecommons.org/licenses/sampling+/1.0/]license[/url]
+Boss bullet sound 2: [url=https://freesound.org/people/nsstudios/sounds/344276/]laser3 by nsstudios[/url] | [url=https://creativecommons.org/licenses/by/3.0/]license[/url]
+
+art
+
+ship and enemy art by daniel cook of epic megagames, released as freeware under the MIT 3.0 license in 2007 in conjunction with the game Tyrian 2000. [url=https://playclassic.games/games/scrolling-shooter-dos-games-online/play-tyrian-2000-online/]click here to play tyrian 2000[/url]"
 text = "Music
 
 Title Screen: 8-bit short by phlank 
-Level 1 music: Title Screen by sawsquarenoise | license"
+Level 1 music: Title Screen by sawsquarenoise | license
+Boss Bullet Sound 1: smallas by inferno | license
+Boss bullet sound 2: laser3 by nsstudios | license
+
+art
+
+ship and enemy art by daniel cook of epic megagames, released as freeware under the MIT 3.0 license in 2007 in conjunction with the game Tyrian 2000. click here to play tyrian 2000"
 __meta__ = {
 "_edit_use_anchors_": false
 }
