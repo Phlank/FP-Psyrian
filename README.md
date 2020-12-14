@@ -67,6 +67,10 @@ Gem pickup sound is [Coin Pickup Sound V 0.2 by Davidsraba](https://freesound.or
 
 Weapon/Powerup pickup sound is [Pickup Magic Bells mod.wav by ryusa](https://freesound.org/people/ryusa/sounds/531092/). CC-1.0.
 
+Boss small weapon sound is [laser3 by nsstudios](https://freesound.org/people/nsstudios/sounds/344276/). CC-BY-3.0
+
+Boss big weapon sound is [smallas by inferno](https://freesound.org/people/inferno/sounds/18397/). CC Sampling Plus 1.0
+
 Other sound effects are from myself.
 
 ### Artwork:

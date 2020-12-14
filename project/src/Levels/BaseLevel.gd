@@ -45,7 +45,9 @@ func _fire():
 	projectile.position = $Player/BulletSpawnLocation.get_global_position()
 
 func _process_area_movement(delta):
-	$PlayerArea.position.y -= scene_movement * delta
+	if scene_movement != 0:
+		$PlayerArea.position.y -= scene_movement * delta
+		$BossArea.position.y -= scene_movement * delta
 	_ensure_player_inside_bounds()
 
 func _ensure_player_inside_bounds():
@@ -99,5 +101,11 @@ func _on_ShootingShip_bullet_fired(bullet, ship):
 	var angle = Vector2(0, 1).angle_to(ship_position - player_position) - PI / 2
 	bullet.angle = angle
 
+func set_constant_movement(new_value):
+	scene_movement = new_value
+	$Player.constant_movement = Vector2(0, -new_value)
 
-
+func _on_BossArea_body_entered(body):
+	if body.is_in_group("bosses"):
+		set_constant_movement(0)
+		body.active = true

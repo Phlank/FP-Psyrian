@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/Enemies/Boss.gd" type="Script" id=1]
+[ext_resource path="res://assets/img/boss.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 137, 53 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 53, 137, 53 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 106, 137, 53 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[node name="Boss" type="KinematicBody2D" groups=[
+"bosses",
+]]
+script = ExtResource( 1 )
+
+[node name="Animation" type="AnimatedSprite" parent="."]
+position = Vector2( 0.33371, 0 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PoolVector2Array( -0.444702, 27.4574, -19.4662, 42.808, -58.5102, 42.1406, -85.5407, 12.4404, -85.5407, -5.91364, -115.908, -4.91251, -117.911, 11.773, -132.928, 12.4404, -137.933, 0.426849, -152.95, 12.4404, -153.951, 68.5037, -165.297, 79.5161, -181.649, 80.1835, -190.659, 70.5059, -190.326, 42.4743, -204.675, 37.4687, -203.674, -6.24734, -190.659, -20.9306, -188.991, -38.9509, -159.624, -50.9645, -152.616, -30.9419, -137.266, -39.6183, -79.534, -63.9792, -14.1268, -76.6601, 12.57, -76.9939, 79.9794, -62.6443, 138.712, -40.6195, 153.193, -33.2394, 162.642, -49.6184, 190.361, -41.7439, 205.165, -4.89116, 205.165, 31.6465, 195.4, 42.0409, 193.511, 69.7592, 184.691, 79.2086, 169.887, 79.2086, 154.138, 68.4992, 154.453, 37.3162, 154.453, 9.91291, 143.114, -1.1114, 137.444, 12.7477, 120.12, 14.6376, 122.01, -5.83611, 90.197, -7.411, 91.142, 11.4878, 63.1087, 42.6709, 26.571, 42.9858 )
+
+[node name="Gun1" type="Node2D" parent="."]
+position = Vector2( -171, 60 )
+
+[node name="Gun2" type="Node2D" parent="."]
+position = Vector2( 171, 60 )
+
+[node name="HurtArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="HurtArea"]
+position = Vector2( 0, 3.67081 )
+scale = Vector2( 1, 1.03 )
+build_mode = 1
+polygon = PoolVector2Array( -0.444702, 27.4574, -19.4662, 42.808, -58.5102, 42.1406, -85.5407, 12.4404, -85.5407, -5.91364, -115.908, -4.91251, -117.911, 11.773, -132.928, 12.4404, -137.933, 0.426849, -152.95, 12.4404, -153.951, 68.5037, -165.297, 79.5161, -181.649, 80.1835, -190.659, 70.5059, -190.326, 42.4743, -204.675, 37.4687, -203.674, -6.24734, -190.659, -20.9306, -188.991, -38.9509, -159.624, -50.9645, -152.616, -30.9419, -137.266, -39.6183, -79.534, -63.9792, -14.1268, -76.6601, 12.57, -76.9939, 79.9794, -62.6443, 138.712, -40.6195, 153.193, -33.2394, 162.642, -49.6184, 190.361, -41.7439, 205.165, -4.89116, 205.165, 31.6465, 195.4, 42.0409, 193.511, 69.7592, 184.691, 79.2086, 169.887, 79.2086, 154.138, 68.4992, 154.453, 37.3162, 154.453, 9.91291, 143.114, -1.1114, 137.444, 12.7477, 120.12, 14.6376, 122.01, -5.83611, 90.197, -7.411, 91.142, 11.4878, 63.1087, 42.6709, 26.571, 42.9858 )
+[connection signal="body_entered" from="HurtArea" to="." method="_on_HurtArea_body_entered"]
+[connection signal="body_exited" from="HurtArea" to="." method="_on_HurtArea_body_exited"]

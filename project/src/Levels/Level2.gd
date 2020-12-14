@@ -11,10 +11,6 @@ func _process(delta):
 	if !$BaseLevel.dead:
 		$Camera2D.position = $BaseLevel/PlayerArea.position
 
-func _on_PlayerArea_body_entered(body):
-	if body.is_in_group("enemies"):
-		body.start_action()
-
 func _on_WinArea_body_entered(body):
 	if body.is_in_group("player"):
 		win = true
@@ -24,4 +20,4 @@ func _on_BaseLevel_faded_out():
 	if $BaseLevel.dead:
 		get_tree().change_scene("res://src/Levels/Level2.tscn")
 	else:
-		get_tree().change_scene("res://src/Shared/End.tscn")
+		get_tree().change_scene("res://src/Shared/Level3.tscn")

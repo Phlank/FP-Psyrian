@@ -12,7 +12,7 @@ func _physics_process(delta):
 	position += -transform.y * speed * delta
 
 func _on_PlayerBullet_body_entered(body):
-	if body.is_in_group("enemies") and !is_impacted:
+	if (body.is_in_group("enemies") or body.is_in_group("bosses")) and !is_impacted:
 		body.inflict(5)
 		speed = 0
 		$AnimatedSprite.play("impact")
