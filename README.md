@@ -1,5 +1,7 @@
 # Psyrian Iteration 1
 
+Play Online: https://bsu-cs315.github.io/FP-Psyrian/
+
 ## About
 
 Psyrian is a small space shooter inspired by Tyrian 2000, a game published by Epic MegaGames that was rereleased as freeware in 2007.
