@@ -8,16 +8,22 @@ Once you are in the level, the controls are as follows:
 
 - Up, Down, Left, Right: Move
 - Space: Fire weapon
-  
-Score as many points as you can!
+
+Beat the final boss!
 
 ## Reflection
 
-Something happened really early into this iteration: scope creep. At work, I've been operating in .NET Core 3.1 since June, and I love the resources it gives me to keep my code clean and expand my software very rapidly and safely. Godot has none of this, so this environment has been getting more and more difficult to cope with as the size of the project gets larger. However, I discovered something this iteration in using base objects: a base level holds all of the shared code and objects that each level uses, a base enemy holds some variables used between various enemies, etc.
+I think this iteration felt the easiest to work through by far. I had imagined getting a boss up and running would have taken longer, but I managed to work my way through it in about two hours and I couldn't be happier about that. I wanted the boss to really feel like Tyrian as I went in, and I feel like I got some of that same energy in there of changing patterns and tough-to-dodge projectiles.
 
-This has made my life so much easier when thinking about each level, each enemy, and even each bullet. It feels like I'm finally getting to a point where I feel comfortable adding onto my project with a strong purpose. Not that I couldn't complete a ticket prior to this iteration for the project, but I feel like I can focus solely on a single ticket at a time now with the number of objects I'm dealing with. I'm enjoying designing parts to this game now, and that makes me feel good. Trying to keep code clean in Godot is still a lot more difficult than in statically typed langauges, and every part of me wants to use GDScript that way, but that doesn't innately make GDScript worse. I have made a lot of google searches and landed on closed github issues for the Godot engine with a final comment of "Will not implement/add" with regards to many OOP concepts I want to use.
+Clean code is really hard to do in games, or at least in Godot. Throughout the project I found myself becoming more comfortable with GDScript, but I didn't find myself appreciating it anymore, I just figured my way around the weirdness of the language. It works for what it does, but I can't personally say that it's good or bad. It just works and that's enough.
 
-In total, this iteration was more learning than productivity, but having felt like I can accomplish more in less time, I'm excited to see how the rest of the project pans out.
+There were a few times when I ran into pretty large frustrations in the project and would end up on a github issue for godot where language suggestions are made and the suggestions get dismissed. I actually encountered this many times; not having things like interfaces or multiple inheritance did frustrate me before I opted for simpler options. I also wished that I could have specified my own types with their own required children types, similar to the way that rigid and kinematic bodies require a collision shape as a child. This would have made me a lot happier, as I could have specified base types more clearly and specified more required behavior in the base type with the opportunity to override in the classes that inherited or implemented them them.
+
+I had mentioned at some point that I have been working in .Net Core for a while and wished I had some of the tools from that toolset. You had asked what tools specifically, and while .Net doesn't really have much to do with games, I've never had an easier time with things that make my life easier like DI and data access. It felt very weird putting stuff into enums when a quick database table feels cleaner, but I honestly think that may just be due to the fact that I work with databases every single day and my company's clients all need custom options in their databases, so any selectable option in our software is coming from their own database.
+
+A long time ago I made pong in C using the SDL2 library for graphics. I'm sure that if I went back and looked at that project I might vomit, especially considering the amount that I've learned through this project. Honestly, the full game of Tyrian/Tyrian 2000 blows my mind, especially looking at the raw image datasheets. Having to organize so much artwork on the screen in a meaningful way is crazy. When you first brought up "juice" in the semester, my mind immediately went to Tyrian. There's so many things that push it far beyond the scope of nearly every other vertical shooter. It's a masterpiece, and I'm so glad I got to use those assets in my own project to speed up my time spent.
+
+Thanks for everything this semester; I deeply appreciate all that you gave us to learn and I value your high expectations for our work. This is my last semester at BSU, and having been in quite a few of your classes I can honestly say they helped me become a better developer than I would have become otherwise.
 
 ## Evaluation
 
