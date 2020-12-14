@@ -27,4 +27,4 @@ func _on_BaseLevel_faded_out():
 	if $BaseLevel.dead:
 		get_tree().change_scene("res://src/Levels/Level1.tscn")
 	else:
-		get_tree().change_scene("res://src/Levels/Level2.tscn")
+		get_tree().change_scene("res://src/Levels/Level2Story.tscn")

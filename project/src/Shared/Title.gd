@@ -15,7 +15,7 @@ func _process(delta):
 
 func _on_Fade_faded_out():
 	if selection == "start":
-		get_tree().change_scene("res://src/Levels/Level1.tscn")
+		get_tree().change_scene("res://src/Levels/Level1Story.tscn")
 	elif selection == "credits":
 		get_tree().change_scene("res://src/Shared/Credits.tscn")
 			

@@ -13,6 +13,7 @@ onready var enemy_bullet = load("res://src/Weapons/EnemyBullet.tscn")
 onready var explosion = load("res://src/Shared/Explosion.tscn")
 
 func _ready():
+	$BaseLevel/Hud/Fade.fade_in()
 	$BaseLevel/Player.gun_weapon = $BaseLevel.weapon_info.WeaponNames.PLASMA_CANNON
 	$BaseLevel/Player.gun_level = 3
 

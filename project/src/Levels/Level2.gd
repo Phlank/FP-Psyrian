@@ -12,12 +12,15 @@ func _process(delta):
 		$Camera2D.position = $BaseLevel/PlayerArea.position
 
 func _on_WinArea_body_entered(body):
+	print("Winner!")
 	if body.is_in_group("player"):
 		win = true
 		$BaseLevel/Hud/Fade.fade_out()
 
 func _on_BaseLevel_faded_out():
+	print("Faded out!")
 	if $BaseLevel.dead:
 		get_tree().change_scene("res://src/Levels/Level2.tscn")
 	else:
-		get_tree().change_scene("res://src/Shared/Level3.tscn")
+		print("Changing scene to level 3")
+		get_tree().change_scene("res://src/Levels/Level3.tscn")

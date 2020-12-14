@@ -30,11 +30,17 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_top = 100.0
+margin_top = 273.0
 margin_right = 1024.0
 margin_bottom = 600.0
 custom_fonts/font = SubResource( 2 )
-text = "That's all the game there is for now. Press Space to return to the main menu."
+text = "No matter how hard you try, you still can't get over the past.
+
+Was the fighting really worth it?
+
+
+
+Space to continue"
 align = 1
 valign = 1
 __meta__ = {
@@ -42,4 +48,5 @@ __meta__ = {
 }
 
 [node name="Fade" parent="." instance=ExtResource( 4 )]
+visible = false
 [connection signal="faded_out" from="Fade" to="." method="_on_Fade_faded_out"]
