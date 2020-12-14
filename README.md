@@ -23,6 +23,8 @@ There were a few times when I ran into pretty large frustrations in the project 
 
 I had mentioned at some point that I have been working in .Net Core for a while and wished I had some of the tools from that toolset. You had asked what tools specifically, and while .Net doesn't really have much to do with games, I've never had an easier time with things that make my life easier like DI and data access. It felt very weird putting stuff into enums when a quick database table feels cleaner, but I honestly think that may just be due to the fact that I work with databases every single day and my company's clients all need custom options in their databases, so any selectable option in our software is coming from their own database.
 
+Using the projects of Github was helpful in terms of refining the scope of each iteration. For me, staying focused on a single item when I'm in the code is one of the most difficult things there is. When I started working at my job and using Jira, it was such a blessing and it's perfect for holding me accountable to myself. Otherwise, it's easy for me to get distracted with other parts of the project, and I'll do some random test and I'll notice another issue and start chasing after it and leave the first issue behind. I'm not familiar enough with Godot to be too accurate in my time estimates, but I at least recognize the things that need to be done for each ticket as I make them. I also love using the projects in Github as you can specify an issue number in a commit message, and Github will automatically make a link on the website in the commit message to the issue itself. For future maintainability, that's one of the best ways to answer the question "Why was this changed before?" It puts each code change not just in context of the commit, but the whole issue and project that commit was a part of, and that's too good to pass up when it takes little to no effort on my part. Jira does something similar with Bitbucket as well.
+
 A long time ago I made pong in C using the SDL2 library for graphics. I'm sure that if I went back and looked at that project I might vomit, especially considering the amount that I've learned through this project. Honestly, the full game of Tyrian/Tyrian 2000 blows my mind, especially looking at the raw image datasheets. Having to organize so much artwork on the screen in a meaningful way is crazy. When you first brought up "juice" in the semester, my mind immediately went to Tyrian. There's so many things that push it far beyond the scope of nearly every other vertical shooter. It's a masterpiece, and I'm so glad I got to use those assets in my own project to speed up my time spent.
 
 Thanks for everything this semester; I deeply appreciate all that you gave us to learn and I value your high expectations for our work. This is my last semester at BSU, and having been in quite a few of your classes I can honestly say they helped me become a better developer than I would have become otherwise.
@@ -60,8 +62,8 @@ Thanks for everything this semester; I deeply appreciate all that you gave us to
 - [ ] ⭐ Include an AI-controlled characters
 - [ ] ⭐ Include an AI-controlled character controlled with a different AI
 - [ ] ⭐ Add a pause menu that includes, at minimum, the ability to resume or return to the main menu
+- [X] ⭐ Follow the planning process introduced in Iteration 1 for both Iterations 2 and 3, and mention the impact of this in your personal reflection.
 - [ ] ⭐ The game is released publicly on <code>itch.io</code>, with all the recommended accompanying text, screenshots, gameplay videos, <i>etc.</i>
-
 
 ## Credits
 
